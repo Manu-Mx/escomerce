@@ -17,7 +17,6 @@ function countMem(numMem){
 }
 
 //Funcion para mostrar las opciones de direcciones
-
 function showContent() {
     element = document.getElementById("content");
     check = document.getElementById("check");
@@ -31,7 +30,7 @@ function showContent() {
 
 //Funcion para mostrar las opciones para ser vendedor
 
-function showContent() {
+function showContent1() {
     element = document.getElementById("content1");
     check = document.getElementById("check1");
     if (check1.checked) {
@@ -41,8 +40,6 @@ function showContent() {
         element.style.display='none';
     }
 }
-
-
 
 let integrantes= sumaIntegrantes(m,f);
 countMem(integrantes);

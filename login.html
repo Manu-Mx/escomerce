@@ -27,22 +27,6 @@
         </ul>
         <a class="head_cta" href="#"><button><i class="far fa-shopping-cart"></i>  Carrito</button></a>
     </nav>
-         <!--MENU-->
-<div class="contenedor">
-<input type="checkbox" class="checkbox" id="check">
-<label class="menu" for="check">|||</label>
-<div class="left-panel">
-    <ul>
-        <a href=".index.html"><li>INICIO</li></a>
-        <a href=""><li>PERFIL</li></a>
-        <a href=""><li>TIPO DE CUENTA</li></a>
-        <a href=""><li>MIS DIRECCIONES</li></a>
-        <a href=""><li>MIS TARJETAS</li></a>
-        <a href=""><li>SEGURIDAD</li></a>
-    </ul>
-</div>
-</div>
-<!--FIN MENU-->
     
     <!--Vistas-->
     <article class="main_container">
@@ -53,18 +37,24 @@
             </div>
             <div id="formulario"><!--Formulario para el inicio de sesion-->
                 <form action="">
-                    <label for="Correo">Correo: </label>
-                    <input type="email" name="Correo" id="correo">
-                    <br>
-                    <label for="Contrasena">Contraseña: </label>
-                    <input type="password" name="Contrasena" id="contrasena">
-                    <br>
-                    <input type="submit" value="Iniciar" onclick="alert('Felicidades!!! Iniciaste sesión buapo ;v')" />
+                    <Table class="iniciarSesion">
+                        <tr>
+                            <td class="informacion"><label for="Correo">Correo: </label></td>
+                            <td><input type="email" name="Correo" required id="correo"></td>
+                        </tr>
+                        <tr>
+                            <td class="informacion"><label for="Contrasena">Contraseña: </label></td>
+                            <td><input type="password" name="Contrasena" id="contrasena"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center"><input type="submit" value="Iniciar" onclick="alert('Felicidades!!! Iniciaste sesión buapo ;v')" /></td>
+                        </tr>
+                    </Table>
                 </form>
             </div>
             <div id="sinCuenta">
                 <p>No tengo cuenta</p>                
-                <input type="button" value="Registrarme" onclick="alert('Empieza a registrarte buapo ;v')">
+                <a href="./registro.html"><input type="button" value="Registrarme" onclick="alert('Empieza a registrarte buapo ;v')"></a>
             </div>
         </div>
     </article>

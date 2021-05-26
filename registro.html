@@ -34,7 +34,7 @@
     <!--Vistas-->
     <article id="index_main_container" class="main_container">
         <!--Contenido aquí agregarán todas sus vistas-->
-        <form id="registerForm" action="index.html" method="post">
+        <form id="registerForm" action="login.html" method="post">
         <fieldset id="registro">
             <legend>REGISTRO</legend>
             <table class="formGeneral">
@@ -116,11 +116,11 @@
                                             <td><input type="text" class="calle" name="calle" id="calle" autofocus placeholder="Nombre de la calle"></td>    
                                         </tr>
                                         <tr>
-                                            <td class="informacion"><label for="noCalleExt">Numero de calle exterior: </label></td>
+                                            <td class="informacion"><label for="noCalleExt">Numero exterior: </label></td>
                                             <td><input type="text" class="noCalleExt" name="noCalleExt" id="noCalleExt" placeholder="Numero exterior"></td>    
                                         </tr>
                                         <tr>
-                                            <td class="informacion"><label for="noCalleInt">Numero de calle interiro: </label></td>
+                                            <td class="informacion"><label for="noCalleInt">Numero interiro: </label></td>
                                             <td><input type="text" class="noCalleInt" name="noCalleInt" id="noCalleInt" placeholder="Numero interior"></td>    
                                         </tr>
                                         <tr>
@@ -154,7 +154,7 @@
                 <tr>
                     <td colspan="2" align="center">
                         <div>
-                            <input type="checkbox" class="check1" name="check1" id="check1" value="1" onchange="javascript:showContent()" />
+                            <input type="checkbox" class="check1" name="check1" id="check1" value="1" onchange="javascript:showContent1()" />
                             <label for="check1">QUIERO SER VENDEDOR (OPCIONAL) +</label>    
                             <div id="content1" style="display: none;">
                                 <table class="direccion">
@@ -173,6 +173,11 @@
                 <tr>
                     <td colspan="2" align="center">
                         <input type="submit" id="button" name="registrar" value="Registrar">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <p class="logint">¿Ya tienes cuenta? <a class="login" href="./login.html"><i>cliquea aqui</i></a></p>
                     </td>
                 </tr>
             </table>
