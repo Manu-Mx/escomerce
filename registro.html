@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="icon" href="./img/LOGO.png">
+    <link rel="stylesheet" href="./style/styleIndex.css">
+    <link rel="stylesheet" href="./style/styleRegistro.css">
+    <title>ESCOMERCE</title>
+</head>
+<body id="body_container">
+    <header id="header_container"></header>
+
+    <!--Barra de Navegacion-->
+    <nav id="navbar_container">
+        <div class="logo_container">
+            <img class="logo" src="./img/LOGO.png" alt="EscomerceLogo">
+            <img class="logo_letters" src="./img/LETRAS LOGO.png" alt="EscomerceLetras">
+        </div>
+        <ul class="navbar_links">
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./login.html">Perfil</a></li>
+            <li><a href="#">Algo</a></li>
+            <li><a href="#">Mas</a></li>
+        </ul>
+        <a class="head_cta" href="#"><button><i class="far fa-shopping-cart"></i>  Carrito</button></a>
+    </nav>
+        
+
+
+
+    <!--Vistas-->
+    <article id="index_main_container" class="main_container">
+        <!--Contenido aquí agregarán todas sus vistas-->
+        <form id="registerForm" action="index.html" method="post">
+        <fieldset id="registro">
+            <legend>REGISTRO</legend>
+            <table class="formGeneral">
+                <tr>
+                    <td class="informacion"><label for="nombre">Nombre: </label></td>
+                    <td><input type="text" class="nombreUsuario" name="nombre" id="nombre" required autofocus placeholder="Ingresa tu nombre(s)"></td>
+                </tr>
+                <tr>
+                    <td class=informacion><label for="apellidoP" class="informacion">Apellido Paterno: </label></td>
+                    <td><input type="text" class="apellidoP" name="apellidoP" id="apellidoP" required placeholder="Ingresa tu primer apellido"></td>
+                </tr>
+                <tr>
+                    <td class=informacion><label for="apellidoM" class="informacion">Apellido Materno: </label></td>
+                    <td><input type="text" class="apellidoM" name="apellidoM" id="apellidoM" required placeholder="Ingresa tu segundo apellido"></td>
+                </tr>
+                <tr>
+                    <td class=informacion><label for="boleta" class="informacion">Boleta: </label></td>
+                    <td><input type="text" class="boleta" name="boleta" id="boleta" required placeholder="Ingresa tu Boleta" pattern="[0-9]{10,15}"></td>
+                </tr>
+                <tr>
+                    <td class=informacion><label for="email" class="informacion">Correo Institucional: </label></td>
+                    <td><input type="email" class="emailUsuario" name="email" id="email" required placeholder="correo@example.com"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="unidad" class="informacion">Unidad academica<br>a la que pertences:</label>
+                    </td>
+                    <td>
+                        <select id="unidad" name="unidad" >
+                            <option>UNIDAD ACADEMICA</option>
+                            <option>ESIME AZCAPOTZALCO</option>
+                            <option>ESIME CULHUACAN</option>
+                            <option>ESIME TICOMÁN</option>
+                            <option>ESIME ZACATENCO</option>
+                            <option>ESIA TECAMACHALCO</option>
+                            <option>ESIA TICOMÁN</option>
+                            <option>ESIA ZACATENCO</option>
+                            <option>CICS MILPA ALTA</option>
+                            <option>CICS SANTO TOMAS</option>
+                            <option>ESCA SANTO TOMAS</option>
+                            <option>ESCA TEPEPAN</option>
+                            <option>ENCB</option>
+                            <option>ENMH</option>
+                            <option>ESEO</option>
+                            <option>ESM</option>
+                            <option>ESE</option>
+                            <option>EST</option>
+                            <option>UPIBI</option>
+                            <option>UPIICSA</option>
+                            <option>UPIITA</option>
+                            <option>ESCOM</option>
+                            <option>ESFM</option>
+                            <option>ESIQIE</option>
+                            <option>ESIT</option>
+                            <option>UPIIG</option>
+                            <option>UPIIH</option>
+                            <option>UPIIZ</option>
+                            <option>ENBA</option>
+                            <option>UPIIC</option>
+                            <option>UPIIP</option>
+                            <option>UPIEM</option>
+                            <option>UPIIT</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class=informacion><label for="Telefono" class="informacion">Telefono de contacto: </label></td>
+                    <td><input type="text" class="Telefono" name="Telefono" id="Telefono" minlength="10" maxlength="10" placeholder="telefono/celular" pattern="[0-9]+"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <div>
+                            <input type="checkbox" class="check" name="check" id="check" value="1" onchange="javascript:showContent()" />
+                            <label for="check">AGREGAR DIRECCION (OPCIONAL) +</label>    
+                            <div id="content" style="display: none;">
+                                    <table class="direccion">
+                                        <tr>
+                                            <td class="informacion"><label for="calle">calle: </label></td>
+                                            <td><input type="text" class="calle" name="calle" id="calle" autofocus placeholder="Nombre de la calle"></td>    
+                                        </tr>
+                                        <tr>
+                                            <td class="informacion"><label for="noCalleExt">Numero de calle exterior: </label></td>
+                                            <td><input type="text" class="noCalleExt" name="noCalleExt" id="noCalleExt" placeholder="Numero exterior"></td>    
+                                        </tr>
+                                        <tr>
+                                            <td class="informacion"><label for="noCalleInt">Numero de calle interiro: </label></td>
+                                            <td><input type="text" class="noCalleInt" name="noCalleInt" id="noCalleInt" placeholder="Numero interior"></td>    
+                                        </tr>
+                                        <tr>
+                                            <td class="informacion"><label for="colonia">Colonia: </label></td>
+                                            <td><input type="text" class="colonia" name="colonia" id="colonia" placeholder="Colonia"></td>    
+                                        </tr>
+                                        <tr>
+                                            <td class="informacion"><label for="alcaldia">Alcaldia: </label></td>
+                                            <td><input type="text" class="alcaldia" name="alcaldia" id="alcaldia" placeholder="Alcaldia"></td>    
+                                        </tr>
+                                        <tr>
+                                            <td class="informacion"><label for="cp">C.P.: </label></td>
+                                            <td><input type="text" class="cp" name="cp" id="cp" placeholder="Codigo Postal" pattern="[0-9]{5}"></td>    
+                                        </tr>
+                                        <tr>
+                                            <td class="informacion"><label for="referencias">referencias: </label></td>
+                                            <td><textarea name="referencias" rows="6" cols="35" maxlength="200" placeholder="Ejemplo: En la esquina hay un gimnasio"></textarea></td>    
+                                        </tr>
+                                    </table>
+                             </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class=informacion><label for="password" class="informacion">Ingresa tu Contraseña: </label></td>
+                    <td><input type="password" class="passwordUsuario" name="password" id="password" minlength="8" maxlength="16" required placeholder="Contraseña" pattern="[A-Za-z0-9]+"></td>
+                </tr>
+                <tr>
+                    <td class=informacion><label for="passwordConfirmacion" class="informacion">Confirma tu Contraseña: </label></td>
+                    <td><input type="password" class="passwordUsuarioConfirmacion" name="passwordConfirmacion" minlength="8" maxlength="16" required id="passwordConfirmacion" placeholder="Confirma tu contraseña" pattern="[A-Za-z0-9]+"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <div>
+                            <input type="checkbox" class="check1" name="check1" id="check1" value="1" onchange="javascript:showContent()" />
+                            <label for="check1">QUIERO SER VENDEDOR (OPCIONAL) +</label>    
+                            <div id="content1" style="display: none;">
+                                <table class="direccion">
+                                    <tr>
+                                        <td class="informacion"><label for="ine">INE: </label></td>
+                                        <td><input type="file" accept="application/pdf" class="ine" name="ine" id="ine"></td>    
+                                    </tr>
+                                    <tr>
+                                        <td class="informacion"><label for="comprDom">Comprobante de domicilio: </label></td>
+                                        <td><input type="file" accept="application/pdf" class="comprDom" name="comprDom" id="comprDom" ></td>    
+                                    </tr>
+                                </table>
+                            </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" id="button" name="registrar" value="Registrar">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        </div>
+        </form>
+
+    </article>
+    
+    <!--Ignorar por el momento-->
+    <aside class ="sidebar"></aside>
+    <footer id="footer_container">
+        <div class="foot_cta">
+            <h3>Integrantes:</h3>
+            <p id="numIntegrantes"></p>
+            <!--Aquí escriban sus nombres-->
+            <ul id="miembros">
+                <li><a href="https://github.com/SheraniVM">Sherani Vázquez Medina</a></li>
+                <li><a href="https://manuosmx.github.io/manu/">Manuel Eduardo Ortiz Salazar</a></li>
+                <li><a href="https://github.com/Daniel-GB0319">Geovanni Daniel Gonzalez Barrientos</a></li>
+                <li><a href="https://github.com/luis-ale-117">Luis Alejandro Mendoza Franco</a></li>
+                <li><a href="https://github.com/Bloodwrath">Angel Ulises Davila Perez</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>ESCOMERCE &#169 . 2021. Todos los derechos reservados. MAMBRU SE FUE A LA GUERRA QUE DOLOR QUE DOLOR QUE PENA UPDATE:20/05/2021</p>
+        </div>
+    </footer>
+    <!--Aquí se agregarán los js-->
+    <script src="./js/main.js"></script>
+</body>
+<!--Colores https://paletton.com/ -->
+<!--Documentacion 1 https://developer.mozilla.org/es/ -->
+<!--Documentacion 2 https://www.w3schools.com/ -->    
+</html>
