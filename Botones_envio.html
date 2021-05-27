@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="icon" href="./img/LOGO.png">
     <link rel="stylesheet" href="./style/styleBase.css">
+    <link rel="stylesheet" href="./style/StyleBotones_envio.css">
     <title>ESCOMERCE</title>
 </head>
-<body id="index_body_container" class="body_container">
-    <header id="index_header_container" class="header_container"></header>
+<body id="Botones_envio_body_container" class="body_container">
+    <header id="Botones_envio_header_container" class="header_container"></header>
 
     <!--Barra de Navegacion-->
     <!--Nombres id(NO SE REPITE): nombreDeLaVista_NombreCajitaPadre_NombreCajita_-->
     <!--Ej: id: base_navbar_container_-->
-    <nav id="index_navbar_container" class="navbar_container">
+    <nav id="Botones_envio_navbar_container" class="navbar_container">
         <div class="logo_container">
             <img class="logo" src="./img/LOGO.png" alt="EscomerceLogo">
             <img class="logo_letters" src="./img/LETRAS LOGO.png" alt="EscomerceLetras">
@@ -29,15 +30,64 @@
         <a class="head_cta" href="#"><button class="button_Carrito"><i class="far fa-shopping-cart"></i>  Carrito</button></a>
     </nav>
     <!--Vistas-->
-    <article id="index_main_container" class="main_container">
+    <article id="Botones_envio_main_container" class="main_container">
         <!--Contenido aquí agregarán todas sus vistas-->
-        <h1>Main</h1>
+        <div class="boxes">
+            <button>Gestionar Envios</button>
+            <button>Consultar Envios Pendientes</button>
+            <button>Consultar Historial de Envios</button>
+            <button>Actualizar Estados de Envios</button>
+          </div><br><br>
+        <h1>Gestionar Envios</h1><br><br>
+        <div class="Table_buton">
+            <table cellspacing="10" cellpadding="10" border="3">
+                <tr>
+                  <th scope="col">Producto</th>
+                  <th scope="col">Caracteristica del Producto</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Subtotal</th>
+                </tr>
+              
+                <tr>
+                  <td><img src="img/img_Botones_envio/pc.jpg" width="50px" height="50px"> alienware </td>
+                  <td>Computadora Nueva, en su caja original con cargador original</td>
+                  <td>1</td>
+                  <td>Pendiente</td>
+                  <td>20.999.00</td>
+                </tr>
+              
+                <tr>
+                  <td><img src="img/img_Botones_envio/proto.png" width="50px" height="50px">Protoboard</td>
+                  <td>Plaqueta de pruebas para circuitos electronicos Nueva</td>
+                  <td>10</td>
+                  <td>Entegado</td>
+                  <td>65.00</td>
+                </tr>
+              
+                <tr>
+                  <td><img src="img/img_Botones_envio/cpld.jfif" width="50px" height="50px">CPLD</td>
+                  <td>Dispositivo electronico nuevo, para pruebas electronicas</td>
+                  <td>3</td>
+                  <td>Entegado</td>
+                  <td>1.767.46</td>
+                </tr>
+              
+                <tr>
+                  <th scope="row">TOTAL</th>
+                  <td>-</td>
+                  <td>7</td>
+                  <td>-</td>
+                  <td><strong>26.951.38</strong></td>
+                </tr>
+              </table>
+        </div>  
     </article>
     
     <!--Ignorar por el momento-->
     <aside class ="sidebar"></aside>
     
-    <footer id="index_footer_container" class="footer_container">
+    <footer id="base_footer_container" class="footer_container">
         <div class="foot_cta">
             <h3>Integrantes:</h3>
             <p id="numIntegrantes"></p>
@@ -59,6 +109,5 @@
 </body>
 <!--Colores https://paletton.com/ -->
 <!--Documentacion 1 https://developer.mozilla.org/es/ -->
-<!--Documentacion 2 https://www.w3schools.com/ -->   
-<!--Herramienta Vistas https://zeplin.io/--> 
+<!--Documentacion 2 https://www.w3schools.com/ -->    
 </html>

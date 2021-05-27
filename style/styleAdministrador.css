@@ -1,0 +1,18 @@
+
+.boton_class_producto{ 
+    flex-direction: row;
+    border: black 2px solid;
+    min-width: 450px;
+    text-align:center;
+}
+
+.boton_class_cuenta{
+    flex-direction: row;
+    border: black 2px solid;
+    min-width: 450px;
+    text-align:center;
+}
+
+img {
+    float: left;
+}

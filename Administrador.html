@@ -13,12 +13,11 @@
     <title>ESCOMERCE</title>
 </head>
 <body id="administrador_body_container" class="body_container">
-    <header id="base_header_container" class="header_container"></header>
-
+    <header id="administrador_header_container" class="header_container"></header> 
     <!--Barra de Navegacion-->
     <!--Nombres id(NO SE REPITE): nombreDeLaVista_NombreCajitaPadre_NombreCajita_-->
     <!--Ej: id: base_navbar_container_-->
-    <nav id="base_navbar_container" class="navbar_container">
+    <nav id="Administrador_navbar_container" class="navbar_container">
         <div class="logo_container">
             <img class="logo" src="./img/LOGO.png" alt="EscomerceLogo">
             <img class="logo_letters" src="./img/LETRAS LOGO.png" alt="EscomerceLetras">
@@ -32,32 +31,31 @@
         <a class="head_cta" href="#"><button class="button_Carrito"><i class="far fa-shopping-cart"></i>  Carrito</button></a>
     </nav>
     <!--Vistas-->
-    <article id="base_main_container" class="main_container">
+    <article id="administrador_main_container" class="main_container">
         <!--Contenido aquí agregarán todas sus vistas-->
         <h1>Administrador</h1>
-        <button id="pedido_id" class="boton_pedido_class" onClick="javascript:close_clip()"><img src="img/img_Administrador/Consultar_Pedido.png" width="120px" height="100px" />
-            <section class="pedido_class">
-                <h4>Consultar Producto</h4><br>
-                Puedes Consultar los productos existentes
-            </section>
+        <button id="consultar_producto_id12" class="boton_class_producto" style="margin-left:100px;" onClick="javascript:close_clip()">
+            <img src="img/img_Administrador/Consultar_Pedido.png" width="120px" height="100px" />
+            <h4>Consultar Producto</h4><br>
+            Puedes Consultar los productos existentes
+        </button>
 
-        <button id="pedido_id" class="boton_pedido_class" onClick="javascript:close_clip()"><img src="img/img_Administrador/Eliminar_Producto.png" width="120px" height="100px" />
-            <section class="pedido_class">
+        <button id="eliminar_producto_id" class="boton_class_producto" style="margin-left:100px;" onClick="javascript:close_clip()">
+            <img src="img/img_Administrador/Eliminar_Producto.png" width="120px" height="100px" />
                 <h4>Eliminar Producto</h4><br>
-                Puedes Eliminar productos de la pagina
-            </section>  
+                Puedes Eliminar productos de la pagina 
+        </button>
 
-        <button id="pedido_id" class="boton_pedido_class" onClick="javascript:close_clip()"><img src="img/img_Administrador/Consultar_Cuenta.png" width="120px" height="100px" />
-            <section class="pedido_class">
+        <button id="consultar_Cuenta_id12" class="boton_class_cuenta" style="margin-left:100px;" onClick="javascript:close_clip()">
+            <img src="img/img_Administrador/Consultar_Cuenta.png" width="120px" height="100px" />
             <h4>Consultar Cuentas</h4><br>
                 Puedes revisar Las cuentas existentes
-             </section> 
+        </button>
                 
-        <button id="pedido_id" class="boton_pedido_class" onClick="javascript:close_clip()"><img src="img/img_Administrador/Eliminar_Cuenta.png" width="120px" height="100px" />
-            <section class="pedido_class">
+        <button id="eliminar_cuenta_id12" class="boton_class_cuenta" style="margin-left:100px;" onClick="javascript:close_clip()">
+            <img src="img/img_Administrador/Eliminar_Cuenta.png" width="120px" height="100px" />
                 <h4>Eliminar Cuentas</h4><br>
-                Puedes Eliminar cuentas existentes de la DB
-            </section>      
+                Puedes Eliminar cuentas existentes de la DB   
         </button>
         
     </article>
@@ -71,6 +69,7 @@
             <p id="numIntegrantes"></p>
             <!--Aquí escriban sus nombres-->
             <ul id="base_Footer_miembros" class="miembros">
+                <li><a href="https://github.com/Red-Paladin1234">Josué Uriel Hernández Olvera</a></li>
                 <li><a href="https://github.com/SheraniVM">Sherani Vázquez Medina</a></li>
                 <li><a href="https://manuosmx.github.io/manu/">Manuel Eduardo Ortiz Salazar</a></li>
                 <li><a href="https://github.com/Daniel-GB0319">Geovanni Daniel Gonzalez Barrientos</a></li>
