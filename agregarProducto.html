@@ -11,6 +11,7 @@
     <link rel="icon" href="./img/LOGO.png">
     <link rel="stylesheet" href="./style/styleBase.css">
     <link rel="stylesheet" href="./style/styleGestionarCatalogo.css">
+    <link rel="stylesheet" href="./style/styleAgregarProducto.css">
     <link rel="stylesheet" href="./style/styleSideBar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
     <title>ESCOMERCE</title>
@@ -22,7 +23,7 @@
     <!--Barra de Navegacion-->
     <!--Nombres id(NO SE REPITE): nombreDeLaVista_NombreCajitaPadre_NombreCajita_-->
     <!--Ej: id: gestionarCatalogo_navbar_container_-->
-    <nav id="gestionarCatalogo_navbar_container" class="navbar_container">
+    <nav id="index_navbar_container" class="navbar_container">
         <div class="logo_container">
             <img class="logo" src="./img/LOGO.png" alt="EscomerceLogo">
             <img class="logo_letters" src="./img/LETRAS LOGO.png" alt="EscomerceLetras">
@@ -38,54 +39,58 @@
     <!--Vistas-->
     <article id="gestionarCatalogo_main_container" class="main_container">
         <!--Contenido aquí agregarán todas sus vistas-->
-        <h1>Catalogo de productos</h1>
+        <h1>Agregar producto</h1>
         <br>
-        <!--TABLA DE PRODUCTOS-->
-        <div>
-            <table class="tablaCatalogo" border="1">
-                <tr>
-                    <th>#</th>
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th>Cantidad en stock</th>
-                    <th>Precio</th>
-                    <th>Condición</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Protoboard</td>
-                    <td>Tamaño: 6cm. x 6cm. <br> Color: Blanca<br> </td>
-                    <td>10</td>
-                    <td>$45</td>
-                    <td>Nuevo</td>
-                    <td><button onclick="clicEliminar()" type=" button " class="btn btn-danger btn-sm">Eliminar</button></td>
-                    <td><button onclick="esperar()" type=" button " class="btn btn-warning btn-sm">Editar</button></td>
+        <div class="formulario">
+            <div class=nombreProductoForm>
+                <input class="form-control form-control-sm" type="text" placeholder="Nombre del producto" aria-label=".form-control-sm example">
+            </div>
+            <br>
+            <div class="categoriaProductoForm">
+                <select class="form-select" aria-label=".form-select-sm example">
+                    <option selected>Categoria </option>
+                    <option value="1">Categoria 1</option>
+                    <option value="2">Categoria 2</option>
+                    <option value="3">Categoria 3</option>
+                  </select>
+            </div>
+            <br>
+            <div class="condicionesProductoForm">
+                <div class="input-group">
+                    <span class="input-group-text" id="inputGroupPrepend2">$</span>
+                    <input type="text" class="form-control form-control-sm" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" placeholder="Precio">
+                </div>
+                <div><input class="form-control" type="text" placeholder="Cantidad" aria-label=".form-control-sm example"></div>
+                <div>
+                    <select class="form-select " aria-label=".form-select-sm example">
+                        <option>Condición</option>
+                        <option value="1">Nuevo</option>
+                        <option value="2">Usado</option>
+                        </select>
+                </div>
+            </div>
+            <br>
+            <div class="imagenesProductoForm">
+                <label for="formFile" class="form-label">Imagenes del producto</label>
+            </div>
+            <div class="mb-3">
+                <input class="form-control" type="file" id="formFile">
+            </div>
 
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
+            <br>
+            <div class="descripcionProductoForm">
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Descripción del producto" rows="4"></textarea>
+            </div>
+            <br>
 
-                </tr>
-            </table>
+            <button onclick="agregarProducto()" type="button" class="btn btn-primary">Agregar producto</button>
+
+
+
         </div>
     </article>
+
+    <!--SIDEBAR MI CUENTA-->
     <div class="wrapper">
         <!-- Sidebar -->
         <nav id="sidebar">

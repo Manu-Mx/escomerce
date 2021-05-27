@@ -2,7 +2,7 @@
     color:black;
     border: 5px;
     background-color: aliceblue;    
-    width: 25%;
+    width: 350px;
     min-width: 270px;
     margin: auto;
 }
@@ -22,7 +22,6 @@
     margin: auto;
     padding-bottom: 10px;
     padding-top: 10px;
-    text-align: center;
 }
 #sinCuenta{
     color:black;
@@ -33,4 +32,14 @@
     padding-bottom: 10px;
     padding-top: 10px;
     text-align: center;
+}
+
+.informacion{
+    text-align: right;
+}
+
+.iniciarSesion{
+    margin: auto;
+    border-collapse: separate;
+    border-spacing:  15px;
 }

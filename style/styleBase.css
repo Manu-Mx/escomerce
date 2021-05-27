@@ -139,7 +139,7 @@ button:hover {
     .body_container {
         grid-template:
         "header" 0px
-        "navbar" 7rem
+        "navbar" 5rem
         "main"
         "sidebar" 0px
         "footer" 10.9rem; /*Columna dimension*/

@@ -8,6 +8,7 @@
     <link rel="icon" href="./img/LOGO.png">
     <link rel="stylesheet" href="./style/styleBase.css">
     <link rel="stylesheet" href="./style/styleConfirmarPedido.css">
+    <link rel="stylesheet" href="./style/styleConsultarPedido.css">
     <title>ESCOMERCE</title>
 </head>
 <body id="confirmarPedido_body_container" class="body_container">
@@ -32,36 +33,55 @@
     <!--Vistas-->
     <article id="confirmarPedido_main_container" class="main_container">
         <!--Contenido aquí agregarán todas sus vistas-->
-        <div id="TituloConfirmarPedido"><h1>Confirmar Pago</h1></div>
+        <div id="TituloConfirmarPedido"><h1>Confirmar Pedido</h1></div>
         <div id="main_container_ConfirmarPedido_superior">
             <div id="ConfirmarPedido_superior_direccion" class="container_format">
-                Direccion de Entrega
+                <h3>Direccion de Entrega</h3><br>
+                <select name="" id="">
+                    <option value="">Direccion1</option>
+                    <option value="">Direccion2</option>
+                    <option value="">Direccion3</option>
+                </select>
+
             </div>
             <div id="ConfirmarPedido_superior_pago" class="ConfirmarPedido_container container_format">
-                <div class=""> Realiza tu pedido y paga </div>
+                <div class=""> <button class="button_Pago"> Realiza tu pedido y paga</button> </div>
                 
                 <div> 
-                    Resumen del pedido <br>
-                    <table>
-                        
-                    </table>
-
+                    <h4>Resumen del pedido </h4>
+                    <p>Costo:             $999</p>
+                    <p>Envío:             $33</p>
                 </div>
                 <div>
-                    Total
+                    <h4>Total (IVA incluido, si aplica)</h4>
+                    <p>Total:             $1032</p>
                 </div>
             </div>
         </div>
         <div id="main_container_ConfirmarPedido_inferior"class="container_format">
-            <div class="ConfirmarPedido_productos">
-                <div>Imagen</div>
-                <div>Nombre</div>
-                <div>Costo</div>
-                <div>Metodo de envio</div>
+            <div id="ConfirmarPedido_productos" class="tabla_productos1">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Imagen</th><th>Producto</th><th>Precio</th><th>Cantidad</th><th>Metodo de envio</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>imagen1.jpg</td><td>Nombre del producto <p>Descripcion</p></td><td>$888</td><td>1</td><td><a href="./metodoEnvio.html">Método de envio</a></td>
+                    </tr>
+                    <tr>
+                        <td>imagen2.jpg</td><td>Nombre del producto <p>Descripcion</p></td><td>$888</td><td>1</td><td><a href="./metodoEnvio.html">Método de envio</a></td>
+                    </tr>
+                    <tr>
+                        <td>imagen3.jpg</td><td>Nombre del producto <p>Descripcion</p></td><td>$888</td><td>1</td><td><a href="./metodoEnvio.html">Método de envio</a></td>
+                    </tr>
+                    <tr>
+                        <td>imagen4.jpg</td><td>Nombre del producto <p>Descripcion</p></td><td>$888</td><td>1</td><td><a href="./metodoEnvio.html">Método de envio</a></td>
+                    </tr>
+                    
+                </table>        
             </div>
-            <div class="ConfirmarPedido_productos">
-                producto 2
-            </div>
+            <div class=""> <button class="button_Cancelar"> Cancelar Orden</button> </div>
         </div>
     </article>
     

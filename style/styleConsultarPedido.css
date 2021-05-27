@@ -1,0 +1,35 @@
+.tabla_productos1 {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+.tabla_productos1 table {
+    margin-top: 3rem;
+    color: black;
+    border-collapse: collapse;
+    background-color: white;
+    width: 100%;
+}
+
+.tabla_productos1 thead {
+    background-color: rgba(9, 54, 67,1);
+    color: whitesmoke;
+    border-bottom: 5px solid cornflowerblue;
+}
+
+.tabla_productos1 th, td {
+    padding: .3rem;
+    
+}
+.tabla_productos1 tr:nth-child(even) {
+    background-color: rgba(7, 200, 255,.3);
+}
+.tabla_productos1 td a {
+    color: brown;
+}
+
+.tabla_productos1 tr:hover td{
+    background-color: rgba(78, 200, 234,0.9);
+    color: white;
+    font-weight: 500;
+}

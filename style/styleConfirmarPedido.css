@@ -10,6 +10,7 @@
     grid-area: TituloCP;
     min-height: .5rem;
 }
+
 #main_container_ConfirmarPedido_superior {
     grid-area: CPsuperior;
     display: flex;
@@ -17,38 +18,52 @@
     margin: .4rem;
 }
 
-#main_container_ConfirmarPedido_inferior {
-    grid-area: CPinferior;
-    background-color: aquamarine;
-    display: flex;
-    flex-direction: column;
-}
 #ConfirmarPedido_superior_direccion {
     grid-area: CPdir;
-    border: 1px solid rgb(255, 0, 0);
     color: black;
     background-color: rgba(255,255,255,0.3);
 }
 #ConfirmarPedido_superior_pago {
     grid-area: CPpago;
-    border: 1px solid rgb(90, 80, 80);
     display: flex;
     flex-direction: column;
     color: black;
     background-color: rgba(255,255,255,0.3);
 }
-
-
+#main_container_ConfirmarPedido_inferior {
+    grid-area: CPinferior;
+    display: flex;
+    flex-direction: column;
+    
+}
 .container_format {
     border-radius: .5rem;
     padding: .5rem;
 }
+.button_Pago {
+    color: aliceblue;
+    padding: 9px 25px;
+    background-color: rgb(40, 10, 135);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
 
-.ConfirmarPedido_productos {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    color: black;
-    background-color: aqua;
-    margin-top: .5rem;
+.button_Pago:hover {
+    background-color: rgb(35, 146, 0);
+    color: white;
+}
+.button_Cancelar {
+    color: aliceblue;
+    padding: 9px 25px;
+    background-color: rgb(253, 74, 79);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+.button_Cancelar:hover {
+    background-color: rgb(215, 5, 5);
+    color: white;
 }
