@@ -1,15 +1,32 @@
-.Table_buton{
-  align-items: center;
-  justify-content: center;
-  border: black 2px solid;
-  text-align: center;
-  background-color: aqua;
+.Table_buton table {
+  margin-top: 3rem;
+  color: black;
   border-collapse: collapse;
+  background-color: white;
+  width: 100%;
 }
 
-td, tr{
-  margin: 15px;
-  padding: 15px;
+.Table_buton thead {
+  background-color: rgba(9, 54, 67,1);
+  color: whitesmoke;
+  border-bottom: 5px solid cornflowerblue;
+}
+
+.Table_buton th, td {
+  padding: .3rem;
+  
+}
+.Table_buton tr:nth-child(even) {
+  background-color: rgba(7, 200, 255,.3);
+}
+.Table_buton td a {
+  color: brown;
+}
+
+.Table_buton tr:hover td{
+  background-color: rgba(78, 200, 234,0.9);
+  color: white;
+  font-weight: 500;
 }
 
 @media screen and (min-width: 600px) {
