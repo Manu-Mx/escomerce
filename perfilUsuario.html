@@ -1,106 +1,518 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="icon" href="./img/LOGO.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style/styleBase.css">
-    <!--Estilos base que tambien usare-->
-    <link rel="stylesheet" href="./style/stylePerfilUsuario.css">
-    <!--Estilos de esta vista-->
-    <title>ESCOMERCE</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Product - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/line-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
+    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/vanilla-zoom.min.css">
 </head>
 
-<body id="index_body_container" class="body_container">
-    <header id="index_header_container" class="header_container"></header>
-
-    <!--Barra de Navegacion-->
-    <!--Nombres id(NO SE REPITE): nombreDeLaVista_NombreCajitaPadre_NombreCajita_-->
-    <!--Ej: id: base_navbar_container_-->
-    <nav id="index_navbar_container" class="navbar_container">
-        <div class="logo_container">
-            <img class="logo" src="./img/LOGO.png" alt="EscomerceLogo">
-            <img class="logo_letters" src="./img/LETRAS LOGO.png" alt="EscomerceLetras">
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container">
+            <div><img src="assets/img/LOGO.png" onclick="inicio()"><img src="assets/img/LETRAS%20LOGO.png" onclick="inicio()"></div><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav d-flex align-items-center align-content-center ms-auto">
+                    <li class="nav-item"></li>
+                    <li class="nav-item"><a class="nav-link" href="catalogo.html">catalogo</a></li>
+                    <li class="nav-item d-flex flex-row-reverse"><button class="btn btn-primary" type="button" style="background: rgb(13,136,208);border-radius: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-top-left-radius: 10px;font-family: Montserrat, sans-serif;"
+                            onclick="verCarrito()"><span>Cantidad</span><i class="fa fa-shopping-cart" style="margin-left: 10px;"></i></button></li>
+                    <li class="nav-item d-flex flex-row-reverse">
+                        <div class="d-flex flex-column-reverse">
+                            <div>
+                                <div class="input-group"><input class="form-control" type="text" style="border-color: RGB(13,136,208);border-top-left-radius: 10px;border-bottom-left-radius: 10px;width: 190px;"><button class="btn btn-primary" type="button" style="border-top-right-radius: 10px;border-bottom-right-radius: 10px;background: rgb(13,136,208);"><i class="fa fa-search" style="width: 80%;"></i></button></div>
+                            </div>
+                            <div class="d-flex flex-row-reverse justify-content-around"><a href="./perfilUsuario.html"><i class="la la-user"></i></a><a id="login_header" href="login.html" style="font-family: Montserrat, sans-serif;">iniciar sesión/registrarse</a></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <ul class="navbar_links">
-            <li><a href="./index.html">Inicio</a></li>
-            <li><a href="./login.html">Perfil</a></li>
-            <li><a href="#">Algo</a></li>
-            <li><a href="#">Mas</a></li>
-        </ul>
-        <a class="head_cta" href="#"><button class="button_Carrito"><i class="far fa-shopping-cart"></i>  Carrito</button></a>
     </nav>
-    <!--Vistas-->
-    <article id="index_main_container" class="main_container">
-        <!--Contenido aquí agregarán todas sus vistas-->
-        <nav id="container_opciones_lateral" class="opciones_lateral">
-            <ul>
-                <li><a href="./perfilUsuario.html">Mis datos</a></li>
-                <li><a href="./misDirecciones.html">Mis direcciones</a></li>
-                <li><a href="./myAccount.html">Editar perfil</a></li>
-                <!-- <li><a href="#">Mis metodos de pago</a></li> -->
-                <li><a href="./consultarPedidos.html">Mis compras</a></li>
-                <li><a href="./consultaHistorialVentas.html">Mis ventas</a></li>
-                <!--Hay que modificar si ya vende jeje-->
-                <li>
-                    <a href="./gestionarCatalogo.html">Catalogo ventas</a>
-                </li>
-                <li><a href="./agregarProducto.html">Vender producto</a></li>
-
-            </ul>
-        </nav>
-        <div class="seleccion">
-            <div id="container_info_vendedor" class="card mb-3" style="max-width: 40rem;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img class="card-img" src="./img/chems.jpg" alt="imagen_cliente">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Cliente: El chems</h5>
-                            <p class="card-text">¡Hola!, soy tu amigo el chems, como veras soy un perrito, ¿que mas quieres saber? SIGUE LEYENDO</p>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Email: hank@police.com</li>
-                                <li class="list-group-item">Tel: 5599887766</li>
-                                <li class="list-group-item">Escuela: De la vida</li>
-                                <li class="list-group-item">Boleta: 2020999888</li>
-                                <li class="list-group-item">Miembro desde: 31 de febrero de 2019</li>
+    <main class="page product-page">
+        <section class="clean-block clean-product dark" style="border-color: var(--bs-red);">
+            <div class="container">
+                <div class="d-flex block-heading" style="width: 100vw;"></div>
+                <div class="block-content">
+                    <div class="product-info">
+                        <div>
+                            <ul class="nav nav-tabs" role="tablist" id="myTab">
+                                <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" id="datos-tab" href="#datos">Mis datos</a></li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" id="compras-tabs" href="#compras">Mis compras</a></li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" id="ventas-tab" href="#ventas">Mis ventas</a></li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" id="catalogo-tab" href="#catalogo">Catalogo</a></li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" id="metodosPago-tab" href="#metodosPago">Métodos de pago</a></li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" id="misDirecciones-tab" href="#misDirecciones">Mis direcciones</a></li>
                             </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active description" role="tabpanel" id="datos">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="d-flex flex-column align-items-center gallery"><img src="assets/img/perfilImagen.png" style="width: 100%;"><input type="file" style="width: 100%;"></div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="info">
+                                                <h3>Nombre usuario</h3>
+                                                <div class="d-none rating"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star-half-empty.svg"><img src="assets/img/star-empty.svg"></div>
+                                                <div class="price">
+                                                    <h3>Escuela de procedencia</h3>
+                                                </div>
+                                                <div class="summary">
+                                                    <p>Biografía del usuario (opcional)</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between" style="margin-top: 40px;">
+                                        <div>
+                                            <h3>Editar información de la cuenta</h3>
+                                        </div>
+                                        <div class="d-flex justify-content-center" style="width: 40px;"><i class="fa fa-caret-square-o-down align-self-center"></i></div>
+                                    </div>
+                                    <div>
+                                        <form id="form_registro">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="name">Nombre</label><input class="form-control item" type="text" id="nombre_usa12" placeholder="Nombre(s)" required="true"></div>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="password">Apellidos</label>
+                                                <input class="form-control" id="a_paterno12" type="text" placeholder="A. Paterno" required="true">
+                                                <input class="form-control" id="a_materno12" type="text" placeholder="A. Materno" required="true" style="margin-top: 10px;"></div>
+                                            <div class="mb-3" id="no_boleta_empleado12">
+                                                <label class="form-label" for="email">Boleta</label><input class="form-control" type="number" placeholder="No. Boleta o de empleado" min="2" max="19999999999999"></div>
+                                            <div class="mb-3" id="correo_cuenta12">
+                                                <label class="form-label" for="email">Correo</label><input class="form-control" type="email" placeholder="Correo institucional" required="true"></div>
+                                            <div class="mb-3" id="contraseña_cuenta12">
+                                                <label class="form-label" for="email">Contraseña</label><input class="form-control" type="password" placeholder="Contraseña de 8 a 16 caracteres" required="true"></div>
+                                            <div class="mb-3" id="contraseña_cuenta42">
+                                                <label class="form-label" for="email">Repite la contraseña</label><input class="form-control" type="password" placeholder="Contraseña de 8 a 16 caracteres" required="true"></div>
+                                            <div class="mb-3" id="escuela_procedencia12">
+                                                <label class="form-label" for="email">Escuela</label>
+                                                <select class="form-select" required="true">
+                                                    <option value="12" selected="">Escuela de procedencia</option>
+                                                    <option value="13">ESCOM</option>
+                                                    <option value="14">ESIME Z</option>
+                                                </select></div>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="email">Teléfono</label>
+                                                <input class="form-control" id="telefono_10dig12" type="tel" placeholder="10 dígitos (opcional)"></div>
+                                            <div class="mb-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" id="vendedor12" type="checkbox">
+                                                    <label class="form-check-label" for="formCheck-1">Quiero ser vendedor</label>
+                                                </div>
+                                            </div>
+                                            <div class="d-block mb-3">
+                                                <label class="form-label" for="email">INE</label>
+                                                <input class="form-control" id="ine12" type="file">
+                                            </div>
+                                            <div class="d-block mb-3">
+                                                <label class="form-label" for="email">Cuenta CLABE</label>
+                                                <input class="form-control" id="cuenta_clabe12" type="text" placeholder="No. cuenta CLABE">
+                                            </div>
+                                            <button class="btn btn-primary" id="actualizar_datos" type="submit" style="background: rgb(52, 73, 94);border-color: rgb(52, 73, 94);border-top-color: rgb(52,border-right-color 73,border-bottom-color 94);border-left-color: 73,;"
+                                            onclick="inicio()">Actualizar datos</button>>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade specifications" role="tabpanel" id="compras">
+                                    <div class="items">
+                                        <div class="product">
+                                            <div class="row justify-content-center align-items-center">
+                                                <div class="col-md-3">
+                                                    <div class="product-image"><img class="img-fluid d-block mx-auto image" src="assets/img/subirImagen.png"></div>
+                                                </div>
+                                                <div class="col-md-5 product-info">
+                                                    <div><span>Fecha de Compra:&nbsp;</span><br><span class="value">Fecha de llegada: </span></div><a class="product-name" href="#" style="color: rgb(13,136,208);">Producto 1</a>
+                                                    <div class="product-specs">
+                                                        <div><span>Detalles:&nbsp;</span><span class="value"></span></div><a href="#" class="product-name">Direccion de Envio</a><br><a href="#" class="product-name">Metodo de Pago</a>
+                                                        <div><span>Vendedor:&nbsp;</span></div>
+                                                        <div><span>Estado de la entrega:&nbsp;</span><span class="value">Status</span></div>
+                                                        <div><span>Precio por unidad:&nbsp;</span><span class="value">Precio por unidad</span></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 col-md-2 quantity"><label class="form-label d-none d-md-block" for="quantity">Total de la compra</label><span>$120</span></div>
+                                                <div class="col"><button class="btn btn-primary" type="button" style="background: rgb(13,136,208);">Volver a comprar</button></div>
+                                            </div>
+
+                                        </div>
+                                        <div class="product"></div>
+                                        <div class="product"></div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade specifications" role="tabpanel" id="ventas">
+                                    <div class="items">
+                                        <div class="product">
+                                            <div class="row justify-content-center align-items-center">
+                                                <div class="col-md-3">
+                                                    <div class="product-image"><img class="img-fluid d-block mx-auto image" src="assets/img/subirImagen.png"></div>
+                                                </div>
+                                                <div class="col-md-5 product-info">
+                                                    <div><span>Fecha de llegada:&nbsp;</span><span class="value">Fecha</span></div><a class="product-name" href="#" style="color: rgb(13,136,208);">Producto 1</a>
+                                                    <div class="product-specs">
+                                                        <div><span>Detalles:&nbsp;</span><span class="value">Detalles de la venta</span></div>
+                                                        <div><span>Estado de la entrega:&nbsp;</span><span class="value">Status</span></div>
+                                                        <div><span>Precio por unidad:&nbsp;</span><span class="value">Precio por unidad</span></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 col-md-2 quantity"><label class="form-label d-none d-md-block" for="quantity">Total de la venta</label><span>$120</span></div>
+                                            </div>
+                                            <div class="row justify-content-center align-items-center">
+                                                <div class="col-md-3">
+                                                    <div class="product-image"><img class="img-fluid d-block mx-auto image" src="assets/img/subirImagen.png"></div>
+                                                </div>
+                                                <div class="col-md-5 product-info">
+                                                    <div><span>Fecha de llegada:&nbsp;</span><span class="value">Fecha</span></div><a class="product-name" href="#" style="color: rgb(13,136,208);">Producto2</a>
+                                                    <div class="product-specs">
+                                                        <div><span>Detalles:&nbsp;</span><span class="value">Detalles de la venta</span></div>
+                                                        <div><span>Estado de la entrega:&nbsp;</span><span class="value">Status</span></div>
+                                                        <div><span>Precio por unidad:&nbsp;</span><span class="value">Precio por unidad</span></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 col-md-2 quantity"><label class="form-label d-none d-md-block" for="quantity">Total de la venta</label><span>$120</span></div>
+                                            </div>
+                                            <div class="row justify-content-center align-items-center">
+                                                <div class="col-md-3">
+                                                    <div class="product-image"><img class="img-fluid d-block mx-auto image" src="assets/img/subirImagen.png"></div>
+                                                </div>
+                                                <div class="col-md-5 product-info">
+                                                    <div><span>Fecha de llegada:&nbsp;</span><span class="value">Fecha</span></div><a class="product-name" href="#" style="color: rgb(13,136,208);">Producto 3</a>
+                                                    <div class="product-specs">
+                                                        <div><span>Detalles:&nbsp;</span><span class="value">Detalles de la venta</span></div>
+                                                        <div><span>Estado de la entrega:&nbsp;</span><span class="value">Status</span></div>
+                                                        <div><span>Precio por unidad:&nbsp;</span><span class="value">Precio por unidad</span></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 col-md-2 quantity"><label class="form-label d-none d-md-block" for="quantity">Total de la venta</label><span>$120</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="product"></div>
+                                        <div class="product"></div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade specifications" role="tabpanel" id="catalogo">
+                                    <div class="items">
+                                        <div class="product">
+                                            <div class="row justify-content-center align-items-center" style="border-style: none;">
+                                                <div class="col-md-3">
+                                                    <div class="product-image"><img class="img-fluid d-block mx-auto image" src="assets/img/subirImagen.png"></div>
+                                                </div>
+                                                <div class="col-md-5 product-info">
+                                                    <div><span>Nombre:&nbsp;</span><span class="value">Nombre</span></div>
+                                                    <div class="product-specs">
+                                                        <div><span>Stock:&nbsp;</span><span class="value">Cantidad</span></div>
+                                                        <div><span>Precio:&nbsp;</span><span class="value">Precio</span></div>
+                                                        <div><span>Precio por unidad:&nbsp;</span><span class="value">Precio por unidad</span></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 col-md-2 justify-content-end quantity">
+                                                    <div class="d-flex flex-column-reverse justify-content-around"><button class="btn btn-primary" type="button" style="background: var(--bs-red);border-style: none;border-color: var(--bs-red);margin-top: 10px;"><i class="fa fa-trash-o"></i></button><button class="btn btn-primary"
+                                                            id="btnEditarProductos" type="button" data-bs-toggle="modal" data-bs-target="#modalProductosProveedor" style="border-style: none;border-color: var(--bs-red);"><i class="fa fa-pencil"></i></button></div>
+                                                </div>
+                                            </div>
+                                            <div class="row justify-content-center align-items-center" style="border-style: none;">
+                                                <div class="col-md-3">
+                                                    <div class="product-image"><img class="img-fluid d-block mx-auto image" src="assets/img/subirImagen.png"></div>
+                                                </div>
+                                                <div class="col-md-5 product-info">
+                                                    <div><span>Nombre:&nbsp;</span><span class="value">Nombre</span></div>
+                                                    <div class="product-specs">
+                                                        <div><span>Stock:&nbsp;</span><span class="value">Cantidad</span></div>
+                                                        <div><span>Precio:&nbsp;</span><span class="value">Precio</span></div>
+                                                        <div><span>Precio por unidad:&nbsp;</span><span class="value">Precio por unidad</span></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 col-md-2 justify-content-end quantity">
+                                                    <div class="d-flex flex-column-reverse justify-content-around"><button class="btn btn-primary" type="button" style="background: var(--bs-red);border-style: none;border-color: var(--bs-red);margin-top: 10px;"><i class="fa fa-trash-o"></i></button><button class="btn btn-primary"
+                                                            id="btnEditarProductos-1" type="button" data-bs-toggle="modal" data-bs-target="#modalProductosProveedor" style="border-style: none;border-color: var(--bs-red);"><i class="fa fa-pencil"></i></button></div>
+                                                </div>
+                                            </div>
+                                            <div class="row justify-content-center align-items-center" style="border-style: none;">
+                                                <div class="col-md-3">
+                                                    <div class="product-image"><img class="img-fluid d-block mx-auto image" src="assets/img/subirImagen.png"></div>
+                                                </div>
+                                                <div class="col-md-5 product-info">
+                                                    <div><span>Nombre:&nbsp;</span><span class="value">Nombre</span></div>
+                                                    <div class="product-specs">
+                                                        <div><span>Stock:&nbsp;</span><span class="value">Cantidad</span></div>
+                                                        <div><span>Precio:&nbsp;</span><span class="value">Precio</span></div>
+                                                        <div><span>Precio por unidad:&nbsp;</span><span class="value">Precio por unidad</span></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 col-md-2 justify-content-end quantity">
+                                                    <div class="d-flex flex-column-reverse justify-content-around"><button class="btn btn-primary" type="button" style="background: var(--bs-red);border-style: none;border-color: var(--bs-red);margin-top: 10px;"><i class="fa fa-trash-o"></i></button><button class="btn btn-primary"
+                                                            id="btnEditarProductos" type="button" data-bs-toggle="modal" data-bs-target="#modalProductosProveedor" style="border-style: none;border-color: var(--bs-red);"><i class="fa fa-pencil"></i></button></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" role="dialog" tabindex="-1" id="modalProductosProveedor">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Agregar/editar producto</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="d-flex flex-column justify-content-around product-specs" style="height: 55vh;">
+                                                        <div class="d-flex justify-content-between"><span>Nombre:&nbsp;</span><input type="text"></div>
+                                                        <div class="d-flex justify-content-between"><span>Cantidad en stock:&nbsp;</span><input type="number"></div>
+                                                        <div class="d-flex justify-content-between"><span>Precio unitario:&nbsp;</span><input type="number"></div>
+                                                        <div class="d-flex flex-column"><span>Imagenes:&nbsp;</span><input type="file"><input type="file"><input type="file"><input type="file"></div>
+                                                        <div class="d-flex justify-content-between"><span>Condición:&nbsp;</span><select>
+                                                                <option value="12" selected="">Condición del producto</option>
+                                                                <option value="13">Nuevo</option>
+                                                                <option value="14">Usado</option>
+                                                            </select></div>
+                                                        <div class="d-flex flex-column"><span>Descripcion del producto</span><textarea></textarea></div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Cancelar</button><button class="btn btn-primary" type="button">Guardar</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade .specifications" role="tabpanel" id="metodosPago">
+                                    <div class="items">
+                                        <div class="product">
+                                            <div class="row justify-content-center align-items-center">
+                                                <div class="col-md-3">
+                                                    <div class="product-image"><img class="img-fluid d-block mx-auto image" src="assets/img/tarjetaCredito.png"></div>
+                                                </div>
+                                                <div class="col-md-5 product-info">
+                                                    <div><span>Terminación tarjeta:&nbsp;</span><span class="value">XXXXX</span></div>
+                                                    <div class="product-specs">
+                                                        <div><span>Tipo:&nbsp;</span><span class="value">VISA</span></div>
+                                                        <div><span>Expira.:&nbsp;</span><span class="value">Nombre del vendedor</span></div>
+                                                        <div><span>Nombre en la tarjeta&nbsp;</span><span class="value">Nombre</span></div>
+                                                        <div>
+                                                            <div><span class="value"></span></div>
+                                                        </div>
+                                                        <div></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col d-flex justify-content-around"><button class="btn btn-primary" id="btnEditarTarjeta" type="button" style="background: rgb(13,136,208);" data-bs-toggle="modal" data-bs-target="#modalEditarTarjeta"><i class="fa fa-pencil"></i></button>
+                                                    <button class="btn btn-primary" type="button" style="background: var(--bs-red);border-style: none;"><i class="fa fa-trash"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="row justify-content-center align-items-center">
+                                                <div class="col-md-3">
+                                                    <div class="product-image"><img class="img-fluid d-block mx-auto image" src="assets/img/tarjetaCredito.png"></div>
+                                                </div>
+                                                <div class="col-md-5 product-info">
+                                                    <div><span>Terminación tarjeta:&nbsp;</span><span class="value">XXXXX</span></div>
+                                                    <div class="product-specs">
+                                                        <div><span>Tipo:&nbsp;</span><span class="value">VISA</span></div>
+                                                        <div><span>Expira.:&nbsp;</span><span class="value">Nombre del vendedor</span></div>
+                                                        <div><span>Nombre en la tarjeta&nbsp;</span><span class="value">Nombre</span></div>
+                                                        <div>
+                                                            <div><span class="value"></span></div>
+                                                        </div>
+                                                        <div></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col d-flex justify-content-around"><button class="btn btn-primary" id="btnEditarTarjeta-1" type="button" style="background: rgb(13,136,208);" data-bs-toggle="modal" data-bs-target="#modalEditarTarjeta"><i class="fa fa-pencil"></i></button>
+                                                    <button class="btn btn-primary" type="button" style="background: var(--bs-red);border-style: none;"><i class="fa fa-trash"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="row justify-content-center align-items-center">
+                                                <div class="col-md-3">
+                                                    <div class="product-image"><img class="img-fluid d-block mx-auto image" src="assets/img/tarjetaCredito.png"></div>
+                                                </div>
+                                                <div class="col-md-5 product-info">
+                                                    <div><span>Terminación tarjeta:&nbsp;</span><span class="value">XXXXX</span></div>
+                                                    <div class="product-specs">
+                                                        <div><span>Tipo:&nbsp;</span><span class="value">VISA</span></div>
+                                                        <div><span>Expira.:&nbsp;</span><span class="value">Nombre del vendedor</span></div>
+                                                        <div><span>Nombre en la tarjeta&nbsp;</span><span class="value">Nombre</span></div>
+                                                        <div>
+                                                            <div><span class="value"></span></div>
+                                                        </div>
+                                                        <div></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col d-flex justify-content-around"><button class="btn btn-primary" id="btnEditarTarjeta" type="button" style="background: rgb(13,136,208);" data-bs-toggle="modal" data-bs-target="#modalEditarTarjeta"><i class="fa fa-pencil"></i></button>
+                                                    <button class="btn btn-primary" type="button" style="background: var(--bs-red);border-style: none;"><i class="fa fa-trash"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <form action="" id="form_usuarioPago">
+                                    <div class="modal fade" role="dialog" tabindex="-1" id="modalEditarTarjeta">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Editar información de pago</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                
+                                                <div class="modal-body">
+                                                    <div class="d-flex flex-column">
+                                                        <div class="d-flex"><span>Nombre:&nbsp;</span><input type="text" id="card_holder_mpago" placeholder="Nombre" style="width: 250px;margin-left: 20px;"></div>
+                                                        <div class="d-flex align-items-center" style="width: 100%;margin-top: 10px;"><span>Fecha:&nbsp;</span><input type="text" id="card_year_mpago" placeholder="AA" style="width: 150px;margin-left: 40px;"><input type="text" id="card_month_mpago" placeholder="MM" style="width: 150px;margin-right: 40px;margin-left: 10px;"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Cerrar</button><button class="btn btn-primary" type="submit" id="btn_guardar">Guardar</button></div>
+                                            </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade .specifications" role="tabpanel" id="misDirecciones">
+                                    <div class="items">
+                                        <div class="product">
+                                            <div class="row justify-content-center align-items-center">
+                                                <div class="col-md-3">
+                                                    <div class="product-image"><img class="img-fluid d-block mx-auto image" src="assets/img/direccion.png"></div>
+                                                </div>
+                                                <div class="col-md-5 product-info">
+                                                    <div><span>Calle:</span><span class="value">&nbsp;Nombre calle</span></div>
+                                                    <div class="product-specs">
+                                                        <div><span>No. interior:&nbsp;</span><span class="value">No.</span></div>
+                                                        <div><span>No. Exterior.:&nbsp;</span><span class="value">No.</span></div>
+                                                        <div><span>Colonia:&nbsp;</span><span class="value">Nombre colonia</span></div>
+                                                        <div><span>Alcaldia/Municipio:&nbsp;</span><span class="value">Nombre alcaldia</span></div>
+                                                        <div><span>C.P:&nbsp;</span><span class="value">Codigo Postal</span></div>
+                                                        <div><span>Referencias:&nbsp;</span><span class="value">Referencias</span></div>
+                                                        <div>
+                                                            <div><span class="value"></span></div>
+                                                        </div>
+                                                        <div></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col d-flex justify-content-around"><button class="btn btn-primary" id="btnEditarDireccion" type="button" style="background: rgb(13,136,208);" data-bs-toggle="modal" data-bs-target="#modalDireccionEdit"><i class="fa fa-pencil" data-bs-toggle="modal" data-bs-target="#modalDireccionEdit"></i></button>
+                                                    <button class="btn btn-primary" type="button" style="background: var(--bs-red);border-style: none;"><i class="fa fa-trash"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" role="dialog" tabindex="-1" id="modalDireccionEdit">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Editar dirección</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="d-flex flex-column justify-content-evenly" style="height: 40vh;">
+                                                        <form action="./index.html" id="form_direcciones">
+                                                            <input type="text" id="calle12" placeholder="Calle">
+                                                            <input type="text" id="no_interior12" placeholder="No. Interior">
+                                                            <input type="text" id="no_exterior12" placeholder="No. Exterior (opcional)">
+                                                            <input type="text" id="colonia12" placeholder="Colonia">
+                                                            <input type="text" id="alcaldia12" placeholder="Alcaldia-Municipio">
+                                                            <input type="text" id="cp12" placeholder="C.P.">
+                                                            <button id="Guardar12">Guardar</button>hola
+                                                        </form>
+                                                    </div>
+                                                        <textarea placeholder="Referencias (No. telefónico, color de la puerta, etc.)"></textarea>
+                                                </div>
+                                                <!--div class="modal-footer"><button class="btn btn-primary" id="Guardar12" type="submit">Guardar</button><button class="btn btn-light" type="button" data-bs-dismiss="modal" data-bs-target="#modalDieccion">Cerrar</button></div-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </article>
-
-    <!--Ignorar por el momento-->
-    <aside class="sidebar"></aside>
-
-    <footer id="index_footer_container" class="footer_container">
-        <div class="foot_cta">
-            <h3>Integrantes:</h3>
-            <p id="numIntegrantes"></p>
-            <!--Aquí escriban sus nombres-->
-            <ul id="base_Footer_miembros" class="miembros">
-                <li><a href="https://github.com/SheraniVM">Sherani Vázquez Medina</a></li>
-                <li><a href="https://manuosmx.github.io/manu/">Manuel Eduardo Ortiz Salazar</a></li>
-                <li><a href="https://github.com/Daniel-GB0319">Geovanni Daniel Gonzalez Barrientos</a></li>
-                <li><a href="https://github.com/luis-ale-117">Luis Alejandro Mendoza Franco</a></li>
-            </ul>
-        </div>
-        <div class="copyright">
-            <p>ESCOMERCE &#169 . 2021. Todos los derechos reservados. MAMBRU SE FUE A LA GUERRA QUE DOLOR QUE DOLOR QUE PENA UPDATE: 23/05/2021</p>
+        </section>
+    </main>
+    <footer class="page-footer dark">
+        <div class="footer-copyright">
+            <p>© Equipo 3 | Análisis y diseño orientado a objetos | 2CV16 | IPN-ESCOM<br></p>
         </div>
     </footer>
-    <!--Aquí se agregarán los js-->
-    <script src="./js/main.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+ https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyC5pkmnPgxN2fF58oCj47RMMQBBoqJXTyc",
+        authDomain: "escommerce-6dadb.firebaseapp.com",
+        databaseURL: "https://escommerce-6dadb-default-rtdb.firebaseio.com",
+        projectId: "escommerce-6dadb",
+        storageBucket: "escommerce-6dadb.appspot.com",
+        messagingSenderId: "963353940793",
+        appId: "1:963353940793:web:168c75d0b777d32a230ee8",
+        measurementId: "G-G7D0QTM0PQ"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    
+    var defaultStorage = firebase.storage();
+
+</script>
+
+<script src="./js/perfilUsuario.js"></script>
+               <script src="js/consultPedido.js"></script>
+ <script src="./js/perfil_usuario.js"></script>
+ <script src="./js/direcciones.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="assets/js/vanilla-zoom.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/Simple-Slider.js"></script>
+    <!--<<script>
+        function changeText(id) {
+          id.innerHTML = "Ooops!";
+          var pONumb = ${sessionScope.pONumb};
+        }
+        </script>
+
+    <h1 id="h1Prueba" onclick="changeText(this)">Click on this text!</h1>
+        <form action="login.html" method="GET">
+            <input type="text" name="serialNumber" />
+        <input type="submit" value="Submit" />
+        </form>-->
 </body>
-<!--Colores https://paletton.com/ -->
-<!--Documentacion 1 https://developer.mozilla.org/es/ -->
-<!--Documentacion 2 https://www.w3schools.com/ -->
 
 </html>

@@ -1,0 +1,23 @@
+#integrantes_main_container{
+    display: flex;
+    flex-direction: column;
+}
+.addIntegrante {
+    align-self: center;
+    background-color: aqua;
+}
+#printIntegrantes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.tarjeta_Integrante {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: aquamarine;
+    
+}
+.img_Integrante img{
+    max-width: 150px;
+    max-height: 150px;
+}

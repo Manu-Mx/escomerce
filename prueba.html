@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Payment - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/line-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
+    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/vanilla-zoom.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container">
+            <div><img src="assets/img/LOGO.png" onclick="inicio()"><img src="assets/img/LETRAS%20LOGO.png"
+                    onclick="inicio()"></div><button data-bs-toggle="collapse" class="navbar-toggler"
+                data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav d-flex align-items-center align-content-center ms-auto">
+                    <li class="nav-item"></li>
+                    <li class="nav-item"><a class="nav-link" href="catalogo.html">catalogo</a></li>
+                    <li class="nav-item d-flex flex-row-reverse"><button class="btn btn-primary" type="button"
+                            style="background: rgb(13,136,208);border-radius: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-top-left-radius: 10px;font-family: Montserrat, sans-serif;"
+                            onclick="verCarrito()"><span>Cantidad</span><i class="fa fa-shopping-cart"
+                                style="margin-left: 10px;"></i></button></li>
+                    <li class="nav-item d-flex flex-row-reverse">
+                        <div class="d-flex flex-column-reverse">
+                            <div>
+                                <div class="input-group"><input class="form-control" type="text"
+                                        style="border-color: RGB(13,136,208);border-top-left-radius: 10px;border-bottom-left-radius: 10px;width: 190px;"><button
+                                        class="btn btn-primary" type="button"
+                                        style="border-top-right-radius: 10px;border-bottom-right-radius: 10px;background: rgb(13,136,208);"><i
+                                            class="fa fa-search" style="width: 80%;"></i></button></div>
+                            </div>
+                            <div class="d-flex flex-row-reverse justify-content-around"><a
+                                    href="./perfilUsuario.html"><i class="la la-user"></i></a><a href="login.html"
+                                    style="font-family: Montserrat, sans-serif;">iniciar sesión/registrarse</a></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page payment-page">
+        <section class="clean-block payment-form dark">
+            <div class="container">
+                <div class="block-heading">
+                    <div class="d-flex" style="width: 100vw;"><button class="btn btn-primary" type="button"
+                            style="background: rgb(13,136,208);">Regresar</button></div>
+                    <h2 class="text-info">Resumen de pedido</h2>
+                    <p>Revisa tu pedido y procede al pago.</p>
+                </div>
+                <form id="form_metodoPago">
+                    <div class="products">
+                        <h3 class="title">Resumen de productos</h3>
+                        <div id="imp-pedido" class="products">
+                            <div class="item"><span class="price">$200</span>
+                                <p class="item-name">Producto 1</p>
+                                <p class="item-description">Descripcion producto</p>
+                            </div>
+                            
+                        </div>
+                    
+                        <div id="divTotal" class="total"><span>Total</span><span class="price">$320</span></div>
+
+                        <div class="d-flex flex-column card-details">
+                            <h3 class="title">Selecciona el método de envío</h3>
+                            <div class="d-flex justify-content-around align-self-center"
+                                style="width: 80%;margin-bottom: 40px;"><button
+                                    class="btn btn-primary d-flex align-self-center" type="button"
+                                    onclick="showMetodoEntregaUA()" style="background: rgb(13,136,208);">Unidad
+                                    académica</button>
+                                <button class="btn btn-primary d-flex align-self-center" type="button"
+                                    onclick="showMetodoEntregaDireccion()"
+                                    style="background: rgb(13,136,208);">Domicilio</button>
+                                <div class="modal fade" role="dialog" tabindex="-1" id="modalDireccion">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Agregar dirección</h4><button type="button"
+                                                    class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="d-flex flex-column justify-content-evenly"
+                                                    style="height: 40vh;"><input class="form-control" type="text"
+                                                        placeholder="Calle"><input class="form-control" type="text"
+                                                        placeholder="No. Interior"><input class="form-control"
+                                                        type="text" placeholder="No. Exterior (opcional)">
+                                                    <input class="form-control" type="text" placeholder="Colonia"><input
+                                                        class="form-control" type="text"
+                                                        placeholder="Alcaldia-Municipio"><input class="form-control"
+                                                        type="text" placeholder="C.P.">
+                                                </div>
+                                                <textarea class="form-control"
+                                                    placeholder="Referencias (No. telefónico, color de la puerta, etc.)"></textarea>
+                                            </div>
+                                            <div class="modal-footer"><button class="btn btn-primary"
+                                                    type="submit">Guardar</button><button class="btn btn-light"
+                                                    type="button" data-bs-dismiss="modal"
+                                                    data-bs-target="#modalDieccion">Cerrar</button></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-block flex-column align-content-center">
+                                <div class="flex-column justify-content-around align-self-center"
+                                    id="divUnidadAcademica" style="width: 80%;margin-bottom: 40px;"><span>Unidad
+                                        académica:</span><select class="form-select" style="margin-bottom: 40px;">
+                                        <option value="undefined" selected="">Selecciona tu unidad académica</option>
+                                        <option value="12">ESCOM</option>
+                                        <option value="13">UPIICSA</option>
+                                        <option value="14">ESIME</option>
+                                    </select><span>Horario de entrega:</span><select class="form-select">
+                                        <option value="undefined" selected="">Horario</option>
+                                        <option value="12">12:00 p.m - 1:00 p.m </option>
+                                        <option value="13">2:00 p.m - 3:00 p.m</option>
+                                    </select></div>
+                                <div class="d-flex flex-column justify-content-start align-self-center"
+                                    id="divDireccion1" style="width: 80%;margin-bottom: 40px; display: none;">
+                                    <span>Dirección:</span><select class="form-select" style="margin-bottom: 40px;">
+                                        <option value="undefined" selected="">Selecciona tu dirección de entrega
+                                        </option>
+                                        <option value="12">Dirección 1</option>
+                                        <option value="13">Dirección 2</option>
+                                    </select><button class="btn btn-primary d-flex align-self-center"
+                                        id="btnAgregarDireccionCompra" type="button" data-bs-toggle="modal"
+                                        data-bs-target="#modalDireccion">Agregar nueva dirección</button></div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column card-details">
+                            <h3 class="title">Seleccionar método de pago</h3>
+                            <div class="d-flex justify-content-around align-self-center"
+                                style="width: 80%;margin-bottom: 40px;"><button
+                                    class="btn btn-primary d-flex align-self-center" type="button"
+                                    style="background: rgb(13,136,208);">Tarjeta de crédito/débito</button><button
+                                    class="btn btn-primary d-flex align-self-center" type="button"
+                                    style="background: rgb(13,136,208);">Efectivo</button></div>
+                        </div>
+                        <div class="d-flex flex-column card-details">
+                            <h3 class="title">Pago en efectivo</h3><span>Se va a generar un archivo con una linea de
+                                captura para que puedas realizar el pago en tu tienda OXXO más cercana.<br></span>
+                            <div class="d-flex justify-content-around align-self-center"
+                                style="width: 80%;margin-bottom: 40px;"><button
+                                    class="btn btn-primary d-flex align-self-center" type="button"
+                                    style="background: rgb(13,136,208);">Proceder al pago.</button></div>
+                        </div>
+                        <div style="width: 80%;"></div>
+                        <div class="d-flex flex-column card-details">
+                            <h3 class="title">Detalles de la tarjeta</h3>
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <div class="mb-3"><label class="form-label" for="card_holder">nombre
+                                            tarjetahabiente</label><input class="form-control form-control-sm"
+                                            type="text" id="card_holder-1"
+                                            placeholder="Nombre como aparece en la tarjeta" name="card_holder"></div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <div class="mb-3"><label class="form-label">fecha de expiración</label>
+                                        <div class="input-group expiration-date"><input class="form-control" type="text"
+                                                id="card_month-1" placeholder="MM" name="expiration_month"><input
+                                                class="form-control" type="text" id="card_year-1" placeholder="AA"
+                                                name="expiration_year"></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="mb-3"><label class="form-label" for="card_number">numero de
+                                            tarjeta</label><input class="form-control" type="text" id="card_number-1"
+                                            placeholder="16 digitos de la tarjeta" name="card_number"></div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="mb-3"><label class="form-label" for="cvc">CVC</label><input
+                                            class="form-control" type="text" id="cvc-1" placeholder="CVC" name="cvc">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit"
+                                            id="subir_registro" style="background: rgb(13,136,208);">Pagar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer dark">
+        <div class="footer-copyright">
+            <p>© Equipo 3 | Análisis y diseño orientado a objetos | 2CV16 | IPN-ESCOM<br></p>
+        </div>
+    </footer>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+  https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyC5pkmnPgxN2fF58oCj47RMMQBBoqJXTyc",
+            authDomain: "escommerce-6dadb.firebaseapp.com",
+            databaseURL: "https://escommerce-6dadb-default-rtdb.firebaseio.com",
+            projectId: "escommerce-6dadb",
+            storageBucket: "escommerce-6dadb.appspot.com",
+            messagingSenderId: "963353940793",
+            appId: "1:963353940793:web:168c75d0b777d32a230ee8",
+            measurementId: "G-G7D0QTM0PQ"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        var defaultStorage = firebase.storage();
+
+    </script>
+    <script src="./js/prueba.js"></script>
+    <!--<script src="./js/realizarPedido.js"></script>-->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="assets/js/vanilla-zoom.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
+
+    <script src="assets/js/Simple-Slider.js"></script>
+</body>
+
+</html>
