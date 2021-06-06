@@ -81,7 +81,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                         await addPedido(datosPedido.id,idUsuario, pedidoConfirmado, datosPedido.total_pagado);
                         console.log("Enviado")
                         function redireccionar() { location.href = "catalogo.html"; }
-                        //setTimeout(redireccionar(), 25000);
+                        setTimeout(redireccionar(), 25000);
                     })
 
                 })
