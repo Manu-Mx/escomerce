@@ -1,67 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="icon" href="./img/LOGO.png">
-    <link rel="stylesheet" href="./style/styleBase.css">
-    <title>ESCOMERCE</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/line-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
+    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/vanilla-zoom.min.css">
 </head>
 
-<body id="index_body_container" class="body_container">
-    <header id="index_header_container" class="header_container"></header>
-
-    <!--Barra de Navegacion-->
-    <!--Nombres id(NO SE REPITE): nombreDeLaVista_NombreCajitaPadre_NombreCajita_-->
-    <!--Ej: id: base_navbar_container_-->
-    <nav id="index_navbar_container" class="navbar_container">
-        <div class="logo_container">
-            <img class="logo" src="./img/LOGO.png" alt="EscomerceLogo">
-            <img class="logo_letters" src="./img/LETRAS LOGO.png" alt="EscomerceLetras">
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container">
+            <div><img src="assets/img/LOGO.png" onclick="inicio()"><img src="assets/img/LETRAS%20LOGO.png" onclick="inicio()"></div><button data-bs-toggle=" collapse " class="navbar-toggler " data-bs-target="#navcol-1 "><span class="visually-hidden
+                    ">Toggle navigation</span><span class="navbar-toggler-icon "></span></button>
+            <div class="collapse navbar-collapse " id="navcol-1 ">
+                <ul class="navbar-nav d-flex align-items-center align-content-center ms-auto ">
+                    <li class="nav-item "></li>
+                    <li class="nav-item "><a class="nav-link " href="catalogo.html ">catalogo</a></li>
+                    <li class="nav-item d-flex flex-row-reverse "><button class="btn btn-primary " type="button " style="background: rgb(13,136,208);border-radius: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-top-left-radius:
+                    10px;font-family: Montserrat, sans-serif; " onclick="verCarrito() "><span>Cantidad</span><i class="fa fa-shopping-cart " style="margin-left: 10px; "></i></button></li>
+                    <li class="nav-item d-flex flex-row-reverse ">
+                        <div class="d-flex flex-column-reverse ">
+                            <div>
+                                <div class="input-group "><input class="form-control " type="text " style="border-color: RGB(13,136,208);border-top-left-radius: 10px;border-bottom-left-radius: 10px;width: 190px; "><button class="btn btn-primary
+                    " type="button " style="border-top-right-radius: 10px;border-bottom-right-radius: 10px;background: rgb(13,136,208); "><i class="fa fa-search " style="width: 80%; "></i></button></div>
+                            </div>
+                            <div class="d-flex flex-row-reverse justify-content-around "><a href="./perfilUsuario.html "><i class="la la-user "></i></a><a id="login_header" href="login.html " style="font-family: Montserrat, sans-serif; ">iniciar sesión/registrarse</a></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <ul class="navbar_links">
-            <li><a href="./index.html">Inicio</a></li>
-            <li><a href="./login.html">Perfil</a></li>
-            <li><a href="#">Algo</a></li>
-            <li><a href="#">Mas</a></li>
-        </ul>
-        <a class="head_cta" href="#"><button class="button_Carrito"><i class="far fa-shopping-cart"></i>  Carrito</button></a>
     </nav>
-    <!--Vistas-->
-    <article id="index_main_container" class="main_container">
-        <!--Contenido aquí agregarán todas sus vistas-->
-        <h1>Main</h1>
-    </article>
-
-    <!--Ignorar por el momento-->
-    <aside class="sidebar"></aside>
-
-    <footer id="index_footer_container" class="footer_container">
-        <div class="foot_cta">
-            <h3>Integrantes:</h3>
-            <p id="numIntegrantes"></p>
-            <!--Aquí escriban sus nombres-->
-            <ul id="base_Footer_miembros" class="miembros">
-                <li><a href="https://github.com/Red-Paladin1234">Josué Uriel Hernández Olvera</a></li>
-                <li><a href="https://github.com/SheraniVM">Sherani Vázquez Medina</a></li>
-                <li><a href="https://manuosmx.github.io/manu/">Manuel Eduardo Ortiz Salazar</a></li>
-                <li><a href="https://github.com/Daniel-GB0319">Geovanni Daniel Gonzalez Barrientos</a></li>
-                <li><a href="https://github.com/luis-ale-117">Luis Alejandro Mendoza Franco</a></li>
-            </ul>
-        </div>
-        <div class="copyright">
-            <p>ESCOMERCE &#169 . 2021. Todos los derechos reservados. MAMBRU SE FUE A LA GUERRA QUE DOLOR QUE DOLOR QUE PENA UPDATE: 23/05/2021</p>
+    <main class="page landing-page ">
+        <section class="clean-block clean-hero " style="color: rgba(13, 136, 208, 0.9);background: url(&quot;https://cdn.freelogovectors.net/wp-content/uploads/2020/02/ipn_logo_national_polytechnic_institute.png&quot;) top / auto repeat-y;filter: blur(0px)
+                    brightness(90%) contrast(102%); ">
+            <div class="text ">
+                <h2>Bienvenido a ESCOMMERCE</h2>
+                <p>Somos una tienda de productos escolares para las distintas carreras impartidas en el Instituto Politécnico Nacional.&nbsp;<br><br>Creada por y para politécnicos.</p>
+            </div>
+        </section>
+        <section class="clean-block clean-info dark ">
+            <div class="container ">
+                <div class="block-heading ">
+                    <h2 class="text-info ">CATEGORIAS</h2>
+                    <p>Tenemos una variedad de productos que te pueden interesar.</p>
+                </div>
+                <div class="row d-flex align-items-center ">
+                    <div class="col-md-6 "><img class="img-thumbnail " src="assets/img/scenery/educacion.png "></div>
+                    <div class="col-md-6 ">
+                        <h3>Libros</h3>
+                        <div class="getting-started-info ">
+                            <p>Contamos con una gran variedad de títulos de diferentes áreas.</p>
+                        </div><button class="btn btn-outline-primary btn-lg " type="button " onclick="catalogo() ">Ver</button>
+                    </div>
+                </div>
+                <div class="row d-flex flex-row-reverse align-items-center ">
+                    <div class="col-md-6 "><img class="img-thumbnail " src="assets/img/scenery/electronicos.png "></div>
+                    <div class="col-md-6 ">
+                        <h3>Materiales electronicos</h3>
+                        <div class="getting-started-info ">
+                            <p>Puedes adquirir material para tus practicas de circuitos electrónicos.</p>
+                        </div><button class="btn btn-outline-primary btn-lg " type="button " onclick="catalogo() ">Ver</button>
+                    </div>
+                </div>
+                <div class="row d-flex align-items-center ">
+                    <div class="col-md-6 "><img class="img-thumbnail " src="assets/img/scenery/laboratorio.png "></div>
+                    <div class="col-md-6 ">
+                        <h3>Materiales para laboratorio</h3>
+                        <div class="getting-started-info ">
+                            <p>¡No olvides la bata! Encuentra lo que necesitas para tus prácticas de laboratorio.</p>
+                        </div><button class="btn btn-outline-primary btn-lg " type="button " onclick="catalogo() ">Ver</button>
+                    </div>
+                </div>
+                <div class="row d-flex flex-row-reverse align-items-center ">
+                    <div class="col-md-6 "><img class="img-thumbnail " src="assets/img/scenery/miscleanea.png "></div>
+                    <div class="col-md-6 ">
+                        <h3>Miscelanea</h3>
+                        <div class="getting-started-info ">
+                            <p>No todo es escolar. Tenemos diversos productos para ti que te pueden interesar.</p>
+                        </div><button class="btn btn-outline-primary btn-lg " type="button " onclick="catalogo() ">Ver</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="clean-block slider dark ">
+            <div class="container ">
+                <div class="block-heading ">
+                    <h2 class="text-info ">Recomendados para ti</h2>
+                </div>
+                <div class="carousel slide " data-bs-ride="carousel " id="carousel-1 ">
+                    <div class="carousel-inner ">
+                        <div class="carousel-item active "><img class="w-100 d-block " src="assets/img/libros2.png "></div>
+                        <div class="carousel-item "><img class="w-100 d-block " src="assets/img/libros1.png " alt="Slide Image "></div>
+                        <div class="carousel-item "><img class="w-100 d-block " src="assets/img/libros3.png " alt="Slide Image "></div>
+                    </div>
+                    <div><a class="carousel-control-prev " href="#carousel-1 " role="button " data-bs-slide="prev "><span class="carousel-control-prev-icon "></span><span class="visually-hidden ">Previous</span></a><a class="carousel-control-next
+                    " href="#carousel-1 " role="button " data-bs-slide="next "><span class="carousel-control-next-icon "></span><span class="visually-hidden ">Next</span></a></div>
+                    <ol class="carousel-indicators ">
+                        <li data-bs-target="#carousel-1 " data-bs-slide-to="0 " class="active "></li>
+                        <li data-bs-target="#carousel-1 " data-bs-slide-to="1 "></li>
+                        <li data-bs-target="#carousel-1 " data-bs-slide-to="2 "></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <section class="clean-block about-us ">
+            <div class="container ">
+                <div class="block-heading ">
+                    <h2 class="text-info ">Clientes satisfechos</h2>
+                    <p>Te compartimos comentarios de personas que han adquirido sus productos con nosotros.</p>
+                </div>
+                <div class="row justify-content-center ">
+                    <div class="col-sm-6 col-lg-4 ">
+                        <div class="card text-center clean-card "><img class="card-img-top w-100 d-block " src="assets/img/perfilImagen.png ">
+                            <div class="card-body info ">
+                                <h4 class="card-title ">Usuario 1</h4>
+                                <p class="card-text ">"Comentario positivo sobre la compra "</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 ">
+                        <div class="card text-center clean-card "><img class="card-img-top w-100 d-block " src="assets/img/perfilImagen.png ">
+                            <div class="card-body info ">
+                                <h4 class="card-title ">Usuario 2</h4>
+                                <p class="card-text ">"Comentario positivo 2 "</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4 ">
+                        <div class="card text-center clean-card "><img class="card-img-top w-100 d-block " src="assets/img/perfilImagen.png ">
+                            <div class="card-body info ">
+                                <h4 class="card-title ">Usuario 3</h4>
+                                <p class="card-text ">"Comentario 3 "</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer dark ">
+        <div class="footer-copyright ">
+            <p>© Equipo 3 | Análisis y diseño orientado a objetos | 2CV16 | IPN-ESCOM</p>
         </div>
     </footer>
-    <!--Aquí se agregarán los js-->
-    <script src="./js/main.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js "></script>
+    <script src="assets/js/vanilla-zoom.js "></script>
+    <script src="assets/js/theme.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js "></script>
+    <script src="assets/js/main.js "></script>
+    <script src="assets/js/Simple-Slider.js "></script>
 </body>
-<!--Colores https://paletton.com/ -->
-<!--Documentacion 1 https://developer.mozilla.org/es/ -->
-<!--Documentacion 2 https://www.w3schools.com/ -->
-<!--Herramienta Vistas https://zeplin.io/-->
 
 </html>

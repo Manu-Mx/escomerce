@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="icon" href="./img/LOGO.png">
+    <link rel="stylesheet" href="./style/styleBase.css">
+    <link rel="stylesheet" href="./style/styleIntegrantes.css">
+    <title>ESCOMERCE</title>
+</head>
+
+<body id="integrantes_body_container" class="body_container">
+    <header id="integrantes_header_container" class="header_container"></header>
+
+    <!--Barra de Navegacion-->
+    <!--Nombres id(NO SE REPITE): nombreDeLaVista_NombreCajitaPadre_NombreCajita_-->
+    <!--Ej: id: base_navbar_container_-->
+    <nav id="base_navbar_container" class="navbar_container">
+        <div class="logo_container">
+            <img class="logo" src="./img/LOGO.png" alt="EscomerceLogo">
+            <img class="logo_letters" src="./img/LETRAS LOGO.png" alt="EscomerceLetras">
+        </div>
+        <ul class="navbar_links">
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./login.html">Perfil</a></li>
+            <li><a href="#">Algo</a></li>
+            <li><a href="#">Mas</a></li>
+        </ul>
+        <a class="head_cta" href="#"><button class="button_Carrito"><i class="far fa-shopping-cart"></i>
+                Carrito</button></a>
+    </nav>
+    <!--Vistas-->
+    <article id="integrantes_main_container" class="main_container">
+        <!--Contenido aquí agregarán todas sus vistas-->
+        <h1>Integrantes</h1>
+        <div class="addIntegrante">
+            <form id="form_datos_int" action="">
+                <div class="integrantes_form_group">
+                    
+                    <p>Foto:<input type="text" id="llenar_foto" class="form_control" placeholder="URL FOTO"></p>
+                </div>
+                <div class="integrantes_form_group">
+                    <input type="text" id="llenar_nombre" class="form_control" placeholder="Escribe tu nombre">
+                </div>
+                <div class="integrantes_form_group">
+                    <input type="text" id="llenar_escuela" class="form_control" placeholder="llenar escuela">
+                </div>
+                <div class="integrantes_form_group">
+                    <textarea id="llenar_desc" class="form_control" cols="30" rows="10"></textarea>
+                </div>
+                <div class="integrantes_form_group">
+                    <input type="text" id="llenar_social" class="form_control" placeholder="llenar red social">
+                </div>
+                <button id="subir_registro">Guardar</button>
+            </form>
+        </div>
+        <div id="printIntegrantes">
+            <div class="tarjeta_Integrante">
+                <div class="img_Integrante">
+                    <img src="./img/integrantes/Manu.jpg" alt="Foto integrante:">
+                </div>
+                <h3>Manu</h3>
+                <div class="desc_Integrante">
+                    <h4>Escuela</h4>
+                    <p>Desc</p>
+                    <a href="#"><p>Twitter</p></a>
+                </div>
+                <div class="botones_carta">
+                    <button>Editar</button>
+                    <button>Eliminar</button>
+                </div>
+            </div>
+            
+            
+        </div>
+    </article>
+
+    <!--Ignorar por el momento-->
+    <aside class="sidebar"></aside>
+
+    <footer id="base_footer_container" class="footer_container">
+        <div class="foot_cta">
+            <h3>Integrantes:</h3>
+            <p id="numIntegrantes"></p>
+            <!--Aquí escriban sus nombres-->
+            <ul id="base_Footer_miembros" class="miembros">
+                <li><a href="https://github.com/Red-Paladin1234">Josué Uriel Hernández Olvera</a></li>
+                <li><a href="https://github.com/SheraniVM">Sherani Vázquez Medina</a></li>
+                <li><a href="https://manuosmx.github.io/manu/">Manuel Eduardo Ortiz Salazar</a></li>
+                <li><a href="https://github.com/Daniel-GB0319">Geovanni Daniel Gonzalez Barrientos</a></li>
+                <li><a href="https://github.com/luis-ale-117">Luis Alejandro Mendoza Franco</a></li>
+                <li><a href="https://github.com/Bloodwrath">Angel Ulises Davila Perez</a></li>
+                <li><a href="https://github.com/Bloodwrath">Santana Contreras Cristian</a></li>
+                <li><a href="https://github.com/D4R10CS">Dario Cante Segura</a></li>
+                <li><a href="#">Abner Eliezer Robles Diaz</a></li>
+
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>ESCOMERCE &#169 . 2021. Todos los derechos reservados. MAMBRU SE FUE A LA GUERRA QUE DOLOR QUE DOLOR QUE
+                PENA UPDATE: 23/05/2021</p>
+        </div>
+    </footer>
+    <!--Aquí se agregarán los js-->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyC5pkmnPgxN2fF58oCj47RMMQBBoqJXTyc",
+            authDomain: "escommerce-6dadb.firebaseapp.com",
+            databaseURL: "https://escommerce-6dadb-default-rtdb.firebaseio.com",
+            projectId: "escommerce-6dadb",
+            storageBucket: "escommerce-6dadb.appspot.com",
+            messagingSenderId: "963353940793",
+            appId: "1:963353940793:web:168c75d0b777d32a230ee8",
+            measurementId: "G-G7D0QTM0PQ"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        
+        var defaultStorage = firebase.storage();
+
+    </script>
+    <script src="./js/integrantes.js"></script>
+    <!--<script src="./js/main.js"></script>-->
+</body>
+<!--Colores https://paletton.com/ -->
+<!--Documentacion 1 https://developer.mozilla.org/es/ -->
+<!--Documentacion 2 https://www.w3schools.com/ -->
+
+</html>
