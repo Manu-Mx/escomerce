@@ -9,6 +9,7 @@ let carritoOn = false;
 let idCarritoBuscar = ''
 let productosConfirmados = [];
 let idUsuario = sessionStorage.getItem('idCliente');
+let idCarrito = idUsuario + "1";
 //Funcion para imprimir la informacion
 const onGetCarrito = (callback) => db.collection('carrito').onSnapshot(callback);
 const onGetPedido = (callback) => db.collection('Confirmar_Pedido').onSnapshot(callback);
@@ -87,6 +88,10 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                          procesandoPago()
                         
                         console.log("Enviado")
+                        const borrarCarrito = (id) => db.collection('carrito').doc(id).delete();
+                        await borrarCarrito(idCarrito);
+                        const borrarCarritoPedido = (id) => db.collection('Carrito_pedido').doc(id).delete();
+                        await borrarCarritoPedido(datosPedido.id);
                         function redireccionar() { location.href = "catalogo.html"; }
                         //setTimeout(redireccionar(), 25000);
                     })
@@ -98,7 +103,10 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                         const idDireccion = combo.options[combo.selectedIndex].lastChild.value
                         await addPedido(datosPedido.id, idUsuario, pedidoConfirmado,idDireccion, datosPedido.total_pagado);
                          procesandoPago()
-                        
+                         const borrarCarrito = (id) => db.collection('carrito').doc(id).delete();
+                        await borrarCarrito(idCarrito);
+                        const borrarCarritoPedido = (id) => db.collection('Carrito_pedido').doc(id).delete();
+                        await borrarCarritoPedido(datosPedido.id);
                         console.log("Enviado")
                         function redireccionar() { location.href = "catalogo.html"; }
                         //setTimeout(redireccionar(), 25000);
