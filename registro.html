@@ -15,8 +15,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/Simple-Slider.css">
     <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/registro.css">
     <link rel="stylesheet" href="assets/css/vanilla-zoom.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/jquery-3.6.0.min.js">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -32,7 +35,7 @@
                     <li class="nav-item"><a class="nav-link" href="catalogo.html">catalogo</a></li>
                     <li class="nav-item d-flex flex-row-reverse"><button class="btn btn-primary" type="button"
                             style="background: rgb(13,136,208);border-radius: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-top-left-radius: 10px;font-family: Montserrat, sans-serif;"
-                            onclick="verCarrito()"><span>Cantidad</span><i class="fa fa-shopping-cart"
+                            onclick="verCarrito()"><span id="numCart">Cantidad</span><i class="fa fa-shopping-cart"
                                 style="margin-left: 10px;"></i></button></li>
                     <li class="nav-item d-flex flex-row-reverse">
                         <div class="d-flex flex-column-reverse">
@@ -43,7 +46,9 @@
                                         style="border-top-right-radius: 10px;border-bottom-right-radius: 10px;background: rgb(13,136,208);"><i
                                             class="fa fa-search" style="width: 80%;"></i></button></div>
                             </div>
-                            <div class="d-flex flex-row-reverse justify-content-around"><a href="./perfilUsuario.html"><i class="la la-user"></i></a><a id="login_header" href="login.html" style="font-family: Montserrat, sans-serif;">iniciar sesión/registrarse</a></div>
+                            <div class="d-flex flex-row-reverse justify-content-around" id="login_header">
+                                <a href="./perfilUsuario.html"><i class="la la-user"></i></a>
+                                <a href="login.html" style="font-family: Montserrat, sans-serif;">iniciar sesión/registrarse</a></div>
                         </div>
                     </li>
                 </ul>
@@ -59,19 +64,66 @@
                     <br>
                     <p style="font-size: small;">Los campos marcados con <label id="asterisco">*</label> son necesarios para el registro.</p>
                 </div>
-                <form id="form_registro">
-                    <div class="mb-3"><label class="form-label" for="name">Nombre: <label id="asterisco">*</label></label><input class="form-control item" type="text" id="llenar_nombre_cliente" placeholder="Nombre(s)" required autofocus></div>
-                    <div class="mb-3"><label class="form-label" for="apellidos">Apellidos: <label id="asterisco">*</label></label><input class="form-control" type="text" id="llenar_a_paterno_cliente" placeholder="A. Paterno" required>
-                        <input class="form-control" type="text" id="llenar_a_materno_cliente" placeholder="A. Materno" required style="margin-top: 10px;"></div>
-                    <div class="mb-3"><label class="form-label" for="noBoleta">Boleta: <label id="asterisco">*</label></label><input class="form-control" type="text" id="llenar_boleta_cliente" placeholder="No. Boleta o de empleado" pattern="[0-9]+" minlength="10" maxlength="10"
-                            title="Este campo solo acepta numeros" required></div>
-                    <div class="mb-3"><label class="form-label" for="email">Correo: <label id="asterisco">*</label></label><input class="form-control" type="email" id="llenar_email_cliente" placeholder="Correo institucional" required pattern="[a-zA-Z_]+([.][a-zA-Z0-9_]+)*@(alumno\.ipn|ipn)\.mx"
-                            title="Verfique su correo sea institucional @ipn.mx o @alumno.ipn.mx"></div>
-                    <div class="mb-3"><label class="form-label" for="password">Contraseña: <label id="asterisco">*</label></label><input class="form-control" type="password" id="llenar_password_cliente" placeholder="Contraseña de 8 a 16 caracteres" required minlength="8"
-                            maxlength="16" pattern="[A-Za-z0-9]+"></div>
-                    <div class="mb-3"><label class="form-label" for="passwordConfirm">Repite la contraseña: <label id="asterisco">*</label></label><input class="form-control" type="password" id="llenar_confirmar_password_cliente" placeholder="Contraseña de 8 a 16 caracteres"
-                            required minlength="8" maxlength="16" pattern="[A-Za-z0-9]+"></div>
-                    <div class="mb-3"><label class="form-label" for="escuela">Escuela: <label id="asterisco">*</label></label><select class="form-select" id="llenar_escuela_cliente" required>
+                <form id="form_registro" action="" class="formulario" class="formulario__grupo">
+                    <div class="mb-3" id="grupo__nombre">
+                        <label class="form-label" for="name">Nombre: <label id="asterisco">*</label></label>
+                        <div class="formulario__grupo-input">
+                            <input name="nombre" class="form-control" type="text" id="llenar_nombre_cliente" placeholder="Nombre(s)" required autofocus>
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">El nombre solo puede contener letras y no puede quedar vacio.</p>
+                    </div>
+                    <div class="mb-3" id="grupo__apaterno" class="formulario__grupo">
+                        <label class="form-label" for="apellidos">Apellido paterno: <label id="asterisco">*</label></label>
+                        <div class="formulario__grupo-input">
+                            <input name="apaterno" class="form-control" type="text" id="llenar_a_paterno_cliente" placeholder="A. Paterno" required>
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">Los apellidos solo pueden contener letras y no pueden quedar vacios.</p>
+                    </div>
+                    <div class="mb-3" id="grupo__amaterno" class="formulario__grupo">
+                        <label class="form-label" for="apellidos">Apellido materno: <label id="asterisco">*</label></label>
+                        <div class="formulario__grupo-input">
+                            <input name="amaterno" class="form-control" type="text" id="llenar_a_materno_cliente" placeholder="A. Materno" required style="margin-top: 10px;">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">Los apellidos solo pueden contener letras y no pueden quedar vacios.</p>
+                    </div>
+                    <div class="mb-3" id="grupo__boleta" class="formulario__grupo">
+                        <label class="form-label" for="noBoleta">Boleta: <label id="asterisco">*</label></label>
+                        <div class="formulario__grupo-input">
+                            <input name="boleta" class="form-control" type="text" id="llenar_boleta_cliente" placeholder="No. Boleta o de empleado" required>
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">La boleta debe tener 10 digitos. El numero de empleado debe tener 14 digitos.</p>
+                    </div>
+                    <div class="mb-3" id="grupo__correo" class="formulario__grupo">
+                        <label class="form-label" for="email">Correo: <label id="asterisco">*</label></label>
+                        <div class="formulario__grupo-input">
+                            <input name="correo" class="form-control" type="email" id="llenar_email_cliente" placeholder="Correo institucional" required>
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">El correo solo puede ser institucional @alumno.ipn.mx o @ipn.mx y solo puede contener letras y numeros.</p>
+                    </div>
+                    <div class="mb-3" id="grupo__password" class="formulario__grupo">
+                        <label class="form-label" for="password">Contraseña: <label id="asterisco">*</label></label>
+                        <div class="formulario__grupo-input">
+                            <input name="password" class="form-control" type="password" id="llenar_password_cliente" required placeholder="Contraseña de 8 a 16 caracteres">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">La contraseña debe tener de 8 a 16 digitos.</p>
+                    </div>
+                    <div class="mb-3" id="grupo__password2" class="formulario__grupo">
+                        <label class="form-label" for="passwordConfirm">Repite la contraseña: <label id="asterisco">*</label></label>
+                        <div class="formulario__grupo-input">
+                            <input name="password2" class="form-control" type="password" id="llenar_confirmar_password_cliente" required placeholder="Contraseña de 8 a 16 caracteres">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">Las contraseñas deben coincidir.</p>
+                    </div>
+                    <div class="mb-3" id="grupo__escuela" class="formulario__grupo">
+                        <label class="form-label" for="escuela">Escuela: <label id="asterisco">*</label></label>
+                        <select class="form-select" id="llenar_escuela_cliente" required>
                             <option value="">Selecciona tu escuela</option>
                                 <option>ESIME AZCAPOTZALCO</option>
                                 <option>ESIME CULHUACAN</option>
@@ -105,18 +157,35 @@
                                 <option>UPIIP</option>
                                 <option>UPIEM</option>
                                 <option>UPIIT</option>
-                        </select></div>
-                    <div class="mb-3"><label class="form-label" for="telefono">Teléfono: </label><input class="form-control" type="text" id="llenar_telefono_cliente" placeholder="10 dígitos (opcional)" minlength="10" maxlength="10" pattern="[0-9]+"></div>
-                    <div class="mb-3">
-                        <div class="form-check"><input class="form-check-input" type="checkbox" id="checkVendedorRegistro" onchange="javascript:showQuieroVender()"><label class="form-check-label" for="checkQuieroVender">Quiero ser vendedor</label></div>
+                            </select>
+                            </div>
+                            <div class="mb-3" id="grupo__telefono" class="formulario__grupo">
+                                <label class="form-label" for="telefono">Teléfono: </label>
+                                <div class="formulario__grupo-input">
+                                    <input name="telefono" class="form-control" type="text" id="llenar_telefono_cliente" placeholder="10 dígitos (opcional)">
+                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                </div>
+                                <p class="formulario__input-error">El telefono debe ser de 10 digitos</p>
+                            </div>
+                            <div class="mb-3" id="grupo__checkVendedor" class="formulario__grupo">
+                                <div class="form-check"><input name="checkVendedor" class="form-check-input" type="checkbox" id="checkVendedorRegistro" onchange="javascript:showQuieroVender()"><label class="form-check-label" for="checkQuieroVender">Quiero ser vendedor</label></div>
                     </div>
                     <div id="opcionesQuieroVender" style="display: none;">
-                        <div class="d-block mb-3" id="divINERegistro"><label class="form-label" for="INE">INE: <label id="asterisco">*</label></label><input class="form-control" id="llenar_ine" type="file"></div>
-                        <div class="d-block mb-3" id="divComprobanteDomicilioRegistro"><label class="form-label" for="comprobanteDomicilio">Comprobante de domicilio: <label id="asterisco">*</label></label><input class="form-control" id="llenar_comprobante_domicilio" type="file"></div>
-                        <div class="d-block mb-3" id="divCLABERegistro"><label class="form-label" for="email">Cuenta CLABE: <label id="asterisco">*</label></label><input class="form-control" type="text" id="llenar_clabe" placeholder="No. cuenta CLABE(18 digitos)" minlength="18" maxlength="18"></div>
+                        <div class="d-block mb-3" id="divINERegistro">
+                            <label class="form-label" for="INE">INE (formato PDF): <label id="asterisco">*</label></label>
+                            <input accept="application/pdf" name="ine" class="form-control" id="llenar_ine" type="file">
+                        </div>
+                        <div class="d-block mb-3" id="divComprobanteDomicilioRegistro">
+                            <label class="form-label" for="comprobanteDomicilio">Comprobante de domicilio (formato PDF): <label id="asterisco">*</label></label>
+                            <input accept="application/pdf" name="comprobanteDomicilio" class="form-control" id="llenar_comprobante_domicilio" type="file">
+                        </div>
+                        <div class="d-block mb-3" id="divCLABERegistro">
+                            <label class="form-label" for="email">Cuenta CLABE: <label id="asterisco">*</label></label>
+                            <input name="clabe" class="form-control" type="text" id="llenar_clabe" placeholder="No. cuenta CLABE(18 digitos)" minlength="18" maxlength="18">
+                        </div>
                     </div>
-
                     <button class="btn btn-primary" type="submit" id="registrar" style="background: rgb(52, 73, 94);">Regístrate</button>
+
                 </form>
             </div>
         </section>
@@ -143,7 +212,7 @@
                 authDomain: "escommerce-6dadb.firebaseapp.com",
                 databaseURL: "https://escommerce-6dadb-default-rtdb.firebaseio.com",
                 projectId: "escommerce-6dadb",
-                storageBucket: "escommerce-6dadb.appspot.com",
+                storageBucket: "gs://escommerce-6dadb.appspot.com",
                 messagingSenderId: "963353940793",
                 appId: "1:963353940793:web:168c75d0b777d32a230ee8",
                 measurementId: "G-G7D0QTM0PQ"
@@ -157,6 +226,8 @@
         </script>
     <!--<script type="module" src="./js/login.js"></script>-->
     <script src="./js/registro.js"></script>
+    <script src="./assets/js/registro.js"></script>
+    <script src="./assets/js/sweetalert.js "></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="assets/js/vanilla-zoom.js"></script>
@@ -164,8 +235,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/Simple-Slider.js"></script>
-    <script src="./assets/js/sweetalert.js "></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11 "></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

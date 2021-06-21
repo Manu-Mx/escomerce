@@ -1,10 +1,18 @@
 //const db = firebase.firestore();
-
-
+var idCliente;
+var calle;
+var noExt;
+var noInt;
+var colonia;
+var alcaldia;
+var CP;
+var referencias;
 //const taskContainer = document.getElementById('printMetodoPagos');
-
+var dirRef;
+var cont = 0;
 let editStatus = false;
 let id = '';
+var existeDir = false;
 
 //Funcion para guardar la informacion en la base de datos
 const saveMetodoPagos = (titular_metodoPago, numeroTarjeta_metodoPago, cvc_metodoPago, month_metodoPago, year_metodoPago) =>
@@ -86,6 +94,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
 
 });
 
+
+
 //Estructura de la informacion que se guardará a la base de datos
 taskForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -119,6 +129,170 @@ taskForm.addEventListener('submit', async (e) => {
     getMetodoPagos();
     taskForm.reset();
 
-
+   
     //console.log(url_foto, nombre_integrante);
 })
+
+function showMetodoCash(){
+    element = document.getElementById("divPagoCard");
+    element1 = document.getElementById("divPagoCash");
+    element.style.display = 'none';
+    element1.style.display = 'block';
+}
+
+function showMetodoCard(){
+    element = document.getElementById("divPagoCard");
+    element1 = document.getElementById("divPagoCash");
+    if(tarjetaCredito == true){
+        element.style.display = 'block';
+        element1.style.display = 'none';
+    } if(tarjetaCredito == false) {
+        element.style.display = 'none';
+        element1.style.display = 'block';
+    } 
+}
+
+document.getElementById("payCard").addEventListener('click',async(e)=>{
+    efectivo = false;
+    tarjetaCredito= true; 
+    showMetodoCard()});
+
+document.getElementById("payCash").addEventListener('click',async(e)=>{
+    efectivo = true;
+    tarjetaCredito= false;
+    showMetodoCard()});
+
+const saveDireccion = (idCliente, calle, noInt, noExt, colonia, alcaldia, CP, referencias) =>
+
+db.collection('direcciones').doc().set({
+    idCliente,
+    calle, 
+    noInt, 
+    noExt, 
+    colonia, 
+    alcaldia, 
+    CP, 
+    referencias
+})
+
+document.getElementById("btnAgregarDireccionCompra").addEventListener("click", async (e) => {
+    document.getElementById('calle').setAttribute("required", "");
+    document.getElementById('noExt').setAttribute("required", "");
+    document.getElementById('colonia').setAttribute("required", "");
+    document.getElementById('alcaldia').setAttribute("required", "");
+    document.getElementById('cp').setAttribute("required", "");
+    document.getElementById('referencias').setAttribute("required", "");
+})
+document.getElementById("btnClose").addEventListener("click", async (e) => {
+    document.getElementById('calle').removeAttribute("required");
+    document.getElementById('noExt').removeAttribute("required");
+    document.getElementById('colonia').removeAttribute("required");
+    document.getElementById('alcaldia').removeAttribute("required");
+    document.getElementById('cp').removeAttribute("required");
+    document.getElementById('referencias').removeAttribute("required");
+})
+document.getElementById("btnCerrar").addEventListener("click", async (e) => {
+    document.getElementById('calle').removeAttribute("required");
+    document.getElementById('noExt').removeAttribute("required");
+    document.getElementById('colonia').removeAttribute("required");
+    document.getElementById('alcaldia').removeAttribute("required");
+    document.getElementById('cp').removeAttribute("required");
+    document.getElementById('referencias').removeAttribute("required");
+})
+
+document.getElementById('btnGuardarDir').addEventListener("click", async (e) => {
+    e.preventDefault();
+    if(existeDir == true){
+        mensajeAdvertencia('Esta direccion ya esta en tus opciones');
+        return;
+    }else{
+        idCliente = sessionStorage.getItem('idCliente');
+        calle = document.getElementById("calle").value.toUpperCase();
+        noInt = Number(document.getElementById("noInt").value);
+        noExt = Number(document.getElementById("noExt").value);
+        colonia = document.getElementById("colonia").value.toUpperCase();
+        alcaldia = document.getElementById("alcaldia").value.toUpperCase();
+        CP = Number(document.getElementById("cp").value);
+        referencias = document.getElementById("referencias").value.toUpperCase();
+        await saveDireccion (idCliente, calle, noInt, noExt, colonia, alcaldia, CP, referencias);
+        mensajeDeExito('Direccion registrada con exito', './realizarPedido.html');
+        location.reload();
+    }
+})
+
+
+
+addEventListener('DOMContentLoaded', async (e) => {
+    e.preventDefault();
+    db.collection("direcciones").where("idCliente", "==", sessionStorage.getItem('idCliente'))
+    .get()
+    .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            dirRef = doc.data();
+            dirId = doc.id;
+            var select = document.getElementById("selectDir")
+            var option = document.createElement("option");
+            option.innerHTML = '<option id="'+dirId+'" value="'+dirId +'" selected="">' + dirRef.calle + " #" + dirRef.noExt + '</option>';
+            select.appendChild(option);
+        })
+    }).catch((error) => {
+        console.log("Error getting documents: ", error);
+    })
+})
+
+document.getElementById('modalDireccion').addEventListener('keyup', async (e) => {
+    existeDir = false;
+    db.collection("direcciones").where("calle", "==", document.getElementById('calle').value.toUpperCase())
+    .where("idCliente", "==", sessionStorage.getItem('idCliente'))
+    .where("noExt", "==", Number(document.getElementById('noExt').value))
+    .where("colonia", "==", document.getElementById('colonia').value.toUpperCase())
+    .where("alcaldia", "==", document.getElementById('alcaldia').value.toUpperCase())
+    .where("CP", "==", Number(document.getElementById('cp').value))
+    .get()
+        .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                existeDir = true;
+            })
+        })
+        .catch((error) => {
+            console.log("Error getting documents: ", error);
+        })
+});
+
+document.getElementById('modalDireccion').addEventListener('click', async (e) => {
+    existeDir = false;
+    db.collection("direcciones").where("calle", "==", document.getElementById('calle').value.toUpperCase())
+    .where("idCliente", "==", sessionStorage.getItem('idCliente'))
+    .where("noExt", "==", Number(document.getElementById('noExt').value))
+    .where("colonia", "==", document.getElementById('colonia').value.toUpperCase())
+    .where("alcaldia", "==", document.getElementById('alcaldia').value.toUpperCase())
+    .where("CP", "==", Number(document.getElementById('cp').value))
+    .get()
+        .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                existeDir = true;
+            })
+        })
+        .catch((error) => {
+            console.log("Error getting documents: ", error);
+        })
+});
+
+document.getElementById('modalDireccion').addEventListener('input', async (e) => {
+    existeDir=false;
+    db.collection("direcciones").where("calle", "==", document.getElementById('calle').value.toUpperCase())
+    .where("idCliente", "==", sessionStorage.getItem('idCliente'))
+    .where("noExt", "==", Number(document.getElementById('noExt').value))
+    .where("colonia", "==", document.getElementById('colonia').value.toUpperCase())
+    .where("alcaldia", "==", document.getElementById('alcaldia').value.toUpperCase())
+    .where("CP", "==", Number(document.getElementById('cp').value))
+    .get()
+        .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                existeDir = true;
+            })
+        })
+        .catch((error) => {
+            console.log("Error getting documents: ", error);
+        })
+});
