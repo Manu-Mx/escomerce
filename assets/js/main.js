@@ -89,28 +89,54 @@ function showQuieroVender() {
     check = document.getElementById("checkVendedorRegistro");
     if (check.checked) {
         element.style.display = 'block';
+        document.getElementById('llenar_ine').setAttribute("required", "");
+        document.getElementById('llenar_comprobante_domicilio').setAttribute("required", "");
+        document.getElementById('llenar_clabe').setAttribute("required", "");
     } else {
         element.style.display = 'none';
+        document.getElementById('llenar_ine').removeAttribute("required");
+        document.getElementById('llenar_comprobante_domicilio').removeAttribute("required");
+        document.getElementById('llenar_clabe').removeAttribute("required");
     }
 }
 
-async function logout () {
+async function logout() {
     document.addEventListener('DOMContentLoaded', async (e) => {
         e.preventDefault();
-        if (sessionStorage.getItem('estadoCuenta') == 'false') {
-            document.getElementById('login_header').innerHTML = "iniciar sesión/registrarse";
-            document.getElementById('login_header').addEventListener('click', function () {
-                window.location = './login.html';
-            });
-
-        } else {
-            document.getElementById('login_header').innerHTML = "Cerrar Sesión";
+        if (sessionStorage.getItem('estadoCuenta') == 'true') {
+            document.getElementById('login_header').innerHTML = '<a href="./perfilUsuario.html"><i class="la la-user"></i></a>'+
+            '<a href="login.html" style="font-family: Montserrat, sans-serif;"> cerrar sesión </a>';
             document.getElementById('login_header').addEventListener('click', function () {
                 sessionStorage.removeItem('idCliente');
                 sessionStorage.setItem('estadoCuenta', false);
+            });
+
+        } else {
+            
+            document.getElementById('login_header').innerHTML = '<a href="login.html" style="font-family: Montserrat, sans-serif;"> iniciar sesión/registrarse </a>';
+            document.getElementById('login_header').addEventListener('click', function () {
+                window.location = './login.html';
             });
         }
     })
 }
 
 addEventListener('DOMContentLoaded', logout());
+
+async function numCar() {
+
+    db.collection("carrito").where("idCliente", "==", sessionStorage.getItem('idCliente'))
+        .get()
+        .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                const cantidadCarrito = doc.data()
+                console.log(cantidadCarrito.infoProducto.length);
+                document.getElementById('numCart').innerHTML = cantidadCarrito.infoProducto.length;
+            })
+        })
+        .catch((error) => {
+            console.log("Error getting documents: ", error);
+        })
+}
+
+addEventListener('click', numCar());
