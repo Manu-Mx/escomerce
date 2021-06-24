@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Ticket</title>
+    <link rel="icon" href="assets/img/LOGO.png">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
+    <link rel="stylesheet" href="assets/css/untitled.css">
+    <link rel="stylesheet" href="assets/css/vanilla-zoom.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container">
+            <div><img src="assets/img/LOGO.png"><img src="assets/img/LETRAS%20LOGO.png"></div><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav d-flex align-items-center align-content-center ms-auto">
+                    <li class="nav-item"></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page payment-page">
+        <section class="clean-block payment-form dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">Resumen del pedido</h2>
+                    <p>A continuación podrás consultar el resumen de tu pedido.</p>
+                    <div id="impIDticket">
+                        <p>ID TICKET: </p>
+                    </div>
+                </div>
+                <form>
+                    <div class="products">
+                        <h3 class="title">Ticket</h3>
+                        <div id="precioProductoStatus" class="item">
+                            <span class="price">$320</span>
+                            <p class="item-name" id="nombreProductoTicket"><span id="cantidadProductoTicket">N </span>Nombre producto&nbsp;</p>
+                            <p class="item-description"><span>Vendido por:</span> Proveedor</p>
+                        </div>
+                        <div id="impTotal" class="total"><span>Total</span><span class="price">$320</span></div>
+                        <div id="impDireccion"class="flex-column">
+                            <p class="item-name" style="margin-top: 25px;"><span class="price">Direccion o UA</span>Dirección o UA</p>
+                        </div>
+                        <div id="impEstadoTicket"class="total"><span>Estado actual del pedido</span><span class="price">En proceso</span></div>
+                        <br><br>
+                        <h3 class="title">Información del método de pago</h3>
+                        <div class="item">
+                            <span class="title">Método de pago</span>
+                            <br><br>
+                            <p id="nombreMetodoPagoTicket"><span id="metodoPagoTicket">Tipo de pago:</span> Tarjeta&nbsp;</p>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer dark">
+        <div class="footer-copyright">
+            <p>© Equipo 3 | Análisis y diseño orientado a objetos | 2CV16 | IPN-ESCOM</p>
+        </div>
+    </footer>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+
+    <script src="./js/firebaseKey.js"></script>
+
+        <script src="./js/envio.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="assets/js/vanilla-zoom.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/Simple-Slider.js"></script>
+</body>
+
+</html>

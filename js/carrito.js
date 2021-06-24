@@ -4,7 +4,7 @@ const taskContainer = document.getElementById('impr-carrito');
 const getPago = document.getElementById('impr-carrito');
 const printPago = document.getElementById('pagar-div');
 const pagarButton = document.getElementById('pagar-btn');
-const numCarrito = document.getElementById('navcol-1');
+const numCarrito = document.getElementById('cantCarrito');
 let carritoOn = false;
 let editStatus = false;
 let id = '';
@@ -64,7 +64,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             console.log(infoDato.infoProducto)
             sessionStorage.setItem('IDClientePago', infoDato.idCliente)
             sessionStorage.setItem('IDCarritoPago', infoDato.id)
-
+            numCarrito.innerHTML = `
+            <span>${infoDato.infoProducto.length}</span><i class="fa fa-shopping-cart" style="margin-left: 10px;"></i>`
             infoDato.infoProducto.forEach((datos) => {
                 //ID de los Productos
                 //console.log(datos.id_prod)
@@ -124,6 +125,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                 addCantidad.forEach((valor) => {
                     valor.addEventListener('click', async (e) => {
                         const doc = await getCarrito(infoDato.id);
+                        
                         const idCarrito = infoDato.id; //ID del Carrito
                         const actualizarCarrito = (doc.data());
                         //actualizarCarrito.infoProducto //Selecciona todos los productos 

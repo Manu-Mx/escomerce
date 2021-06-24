@@ -102,6 +102,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                         console.log(combo.options[combo.selectedIndex].lastChild.value);
                         const idDireccion = combo.options[combo.selectedIndex].lastChild.value
                         await addPedido(datosPedido.id, idUsuario, pedidoConfirmado,idDireccion, datosPedido.total_pagado);
+                        datosPedido.id
+                        sessionStorage.setItem('idProdPedido', datosPedido.id);
                          procesandoPago()
                          const borrarCarrito = (id) => db.collection('carrito').doc(id).delete();
                         await borrarCarrito(idCarrito);
