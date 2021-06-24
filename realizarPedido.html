@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Payment - Brand</title>
+    <link rel="icon" href="assets/img/LOGO.png">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
@@ -27,10 +28,10 @@
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav d-flex align-items-center align-content-center ms-auto">
                     <li class="nav-item"></li>
-                    <li class="nav-item"><a class="nav-link" href="catalogo.html">catalogo</a></li>
-                    <li class="nav-item d-flex flex-row-reverse"><button class="btn btn-primary" type="button"
+                    <li class="nav-item"><a class="nav-link active" href="catalogo.html">catalogo</a></li>
+                    <li class="nav-item d-flex flex-row-reverse"><button id="cantCarrito"  class="btn btn-primary" type="button"
                             style="background: rgb(13,136,208);border-radius: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-top-left-radius: 10px;font-family: Montserrat, sans-serif;"
-                            onclick="verCarrito()"><span>Cantidad</span><i class="fa fa-shopping-cart"
+                            onclick="verCarrito()"><span>0</span><i class="fa fa-shopping-cart"
                                 style="margin-left: 10px;"></i></button></li>
                     <li class="nav-item d-flex flex-row-reverse">
                         <div class="d-flex flex-column-reverse">
@@ -41,7 +42,11 @@
                                         style="border-top-right-radius: 10px;border-bottom-right-radius: 10px;background: rgb(13,136,208);"><i
                                             class="fa fa-search" style="width: 80%;"></i></button></div>
                             </div>
-                            <div class="d-flex flex-row-reverse justify-content-around"><a href="./perfilUsuario.html"><i class="la la-user"></i></a><a id="login_header" href="login.html" style="font-family: Montserrat, sans-serif;">iniciar sesión/registrarse</a></div>
+                            <div class="d-flex flex-row-reverse justify-content-around" id="login_header">
+                                <a href="./perfilUsuario.html"><i class="la la-user"></i></a>
+                                <a href="login.html" style="font-family: Montserrat, sans-serif;">iniciar
+                                    sesión/registrarse</a>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -84,28 +89,39 @@
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title">Agregar dirección</h4><button type="button"
-                                                    class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
+                                                <h4 class="modal-title">Agregar dirección</h4>
+                                                <button type="button" id="btnClose" class="btn-close"
+                                                    data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
                                                 <div class="d-flex flex-column justify-content-evenly"
-                                                    style="height: 40vh;"><input class="form-control" type="text"
-                                                        placeholder="Calle"><input class="form-control" type="text"
-                                                        placeholder="No. Interior"><input class="form-control"
-                                                        type="text" placeholder="No. Exterior (opcional)">
-                                                    <input class="form-control" type="text" placeholder="Colonia"><input
+                                                    style="height: 40vh;">
+                                                    <input title="&quot;Calle&quot;" id="calle" class="form-control"
+                                                        type="text" placeholder="Calle">
+                                                    <input title="&quot;No. Exterior&quot;" id="noExt"
+                                                        class="form-control" type="text" placeholder="No. Exterior">
+                                                    <input title="&quot;No. Interior&quot;" id="noInt"
                                                         class="form-control" type="text"
-                                                        placeholder="Alcaldia-Municipio"><input class="form-control"
-                                                        type="text" placeholder="C.P.">
+                                                        placeholder="No. Interior (opcional)">
+                                                    <input title="&quot;Colonia&quot;" id="colonia" class="form-control"
+                                                        type="text" placeholder="Colonia">
+                                                    <input title="&quot;Alcaldia-Municipio&quot;" id="alcaldia"
+                                                        class="form-control" type="text"
+                                                        placeholder="Alcaldia-Municipio">
+                                                    <input title="&quot;Codigo Postal&quot;" id="cp"
+                                                        class="form-control" type="text" placeholder="C.P.">
                                                 </div>
-                                                <textarea class="form-control"
+                                                <textarea title="&quot;Referencias&quot;" id="referencias"
+                                                    class="form-control"
                                                     placeholder="Referencias (No. telefónico, color de la puerta, etc.)"></textarea>
                                             </div>
-                                            <div class="modal-footer"><button class="btn btn-primary"
-                                                    type="submit">Guardar</button><button class="btn btn-light"
-                                                    type="button" data-bs-dismiss="modal"
-                                                    data-bs-target="#modalDieccion">Cerrar</button></div>
+                                            <div class="modal-footer">
+                                                <button id="btnGuardarDir" class="btn btn-primary"
+                                                    type="submit">Guardar</button>
+                                                <button id="btnCerrar" class="btn btn-light" type="button"
+                                                    data-bs-dismiss="modal"
+                                                    data-bs-target="#modalDieccion">Cerrar</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -124,12 +140,11 @@
                                         <option value="13">2:00 p.m - 3:00 p.m</option>
                                     </select></div>
                                 <div class="d-flex flex-column justify-content-start align-self-center"
-                                    id="divDireccion1" style="width: 80%;margin-bottom: 40px; display: none;">
-                                    <span>Dirección:</span><select class="form-select" style="margin-bottom: 40px;">
+                                    id="divDireccion" style="width: 80%;margin-bottom: 40px; display: none;">
+                                    <span>Dirección:</span><select class="form-select" id="selectDir"
+                                        style="margin-bottom: 40px;">
                                         <option value="undefined" selected="">Selecciona tu dirección de entrega
                                         </option>
-                                        <option value="12">Dirección 1</option>
-                                        <option value="13">Dirección 2</option>
                                     </select><button class="btn btn-primary d-flex align-self-center"
                                         id="btnAgregarDireccionCompra" type="button" data-bs-toggle="modal"
                                         data-bs-target="#modalDireccion">Agregar nueva dirección</button>
@@ -140,45 +155,95 @@
                             <h3 class="title">Seleccionar método de pago</h3>
                             <div class="d-flex justify-content-around align-self-center"
                                 style="width: 80%;margin-bottom: 40px;"><button
-                                    class="btn btn-primary d-flex align-self-center" type="button"
-                                    style="background: rgb(13,136,208);">Tarjeta de crédito/débito</button><button
-                                    class="btn btn-primary d-flex align-self-center" type="button"
+                                    class="btn btn-primary d-flex align-self-center" type="button" id="payCard"
+                                    onclick="showMetodoCard()" style="background: rgb(13,136,208);">Tarjeta de
+                                    crédito/débito</button><button class="btn btn-primary d-flex align-self-center"
+                                    type="button" id="payCash" onclick="showMetodoCash()"
                                     style="background: rgb(13,136,208);">Efectivo</button></div>
                         </div>
-                        <div class="d-flex flex-column card-details">
-                            <h3 class="title">Pago en efectivo</h3><span>Se va a generar un archivo con una linea de
-                                captura para que puedas realizar el pago en tu tienda OXXO más cercana.<br></span>
+                        <div class=" flex-column card-details" id="divPagoCash" style="display:none;">
+                            <h3 class="title">Pago en efectivo</h3>
+
+                            <div class="d-flex flex-column justify-content-around align-items-center">
+
+                                <p>A continuación, podrás generar una línea de captura para realizar el pago en efectivo
+                                    de tu pedido. Ten en cuenta algunas condiciones que se tienen al elegir este método
+                                    de pago.</p><a id="linkPagoEfectivo" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#modalPagoEfectivo">Consúltalas aquí.</a>
+                                <div class="modal fade" role="dialog" tabindex="-1" id="modalPagoEfectivo">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Consideraciones al pagar en efectivo</h4><button
+                                                    type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p style="text-align: left;">Debes considerar lo siguiente al momento de
+                                                    elegir el pago en efectivo como método de pago para tu
+                                                    compra:<br><br>1) La garantía de devolución sobre los productos de
+                                                    tu pedido no aplica para este método de pago, es decir, en caso de
+                                                    algún fallo en alguno de los productos de tu pedido, no podremos
+                                                    realizar la devolución correspondiente.<br><br>&nbsp;2) El proceso
+                                                    de aprobación del pago no es inmediato, tiene un lapso de 24 a 48
+                                                    horas, por lo que tu pedido se procesará hasta después de aprobado
+                                                    el pago. Es importante tener esto en consideración, pues si
+                                                    necesitas tu pedido antes de ese tiempo establecido, te recomendamos
+                                                    realizar tu pago con tarjeta de crédito/débito.<br><br>Agradecemos
+                                                    tu comprensión.</p>
+                                            </div>
+                                            <div class="modal-footer"><button class="btn btn-primary" type="button"
+                                                    data-bs-dismiss="modal">Entendido</button></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p style="margin-top: 10px;">Una vez que elijas proceder a realizar el pago en efectivo,
+                                    recibirás un correo electrónico con la línea de captura y las instrucciones para
+                                    pagar en tu tienda OXXO más cercana.</p>
+                            </div>
+
+
                             <div class="d-flex justify-content-around align-self-center"
-                                style="width: 80%;margin-bottom: 40px;"><button
+                                style="width: 80%;margin-bottom: 40px;"><button id="btn-pagarEfectivo"
                                     class="btn btn-primary d-flex align-self-center" type="button"
                                     style="background: rgb(13,136,208);">Proceder al pago.</button></div>
                         </div>
                         <div style="width: 80%;"></div>
-                        <div class="d-flex flex-column card-details">
+                        <div class=" flex-column card-details" id="divPagoCard" style="display:none;">
                             <h3 class="title">Detalles de la tarjeta</h3>
                             <div class="row">
                                 <div class="col-sm-7">
                                     <div class="mb-3"><label class="form-label" for="card_holder">nombre
                                             tarjetahabiente</label><input class="form-control form-control-sm"
                                             type="text" id="card_holder-1"
-                                            placeholder="Nombre como aparece en la tarjeta" name="card_holder"></div>
+                                            placeholder="Nombre como aparece en la tarjeta" name="card_holder"
+                                            pattern="[a-zA-Z ]+[a-zA-Z ]" required autofocus
+                                            title="Ingresa solo Mayusculas y Minusculas"></div>
                                 </div>
                                 <div class="col-sm-5">
                                     <div class="mb-3"><label class="form-label">fecha de expiración</label>
                                         <div class="input-group expiration-date"><input class="form-control" type="text"
-                                                id="card_month-1" placeholder="MM" name="expiration_month"><input
+                                                id="card_month-1" placeholder="MM" name="expiration_month"
+                                                pattern="[0]+[1-9]|[1]+[0-2]" minlength="2" maxlength="2" required
+                                                title="Ingresa el mes en digitos (01 hasta 12)"><input
                                                 class="form-control" type="text" id="card_year-1" placeholder="AA"
-                                                name="expiration_year"></div>
+                                                name="expiration_year" pattern="[2]+[2-9]|[3-9]+[0-9]" minlength="2"
+                                                maxlength="2" required
+                                                title="Ingresa ultimos 2 digitos del año (22 en adelante)"></div>
                                     </div>
                                 </div>
                                 <div class="col-sm-8">
                                     <div class="mb-3"><label class="form-label" for="card_number">numero de
                                             tarjeta</label><input class="form-control" type="text" id="card_number-1"
-                                            placeholder="16 digitos de la tarjeta" name="card_number"></div>
+                                            placeholder="16 digitos de la tarjeta" name="card_number" pattern="[0-9]+"
+                                            minlength="16" maxlength="16" required
+                                            title="Ingresa los 16 Digitos sin guiones"></div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="mb-3"><label class="form-label" for="cvc">CVC</label><input
-                                            class="form-control" type="text" id="cvc-1" placeholder="CVC" name="cvc">
+                                            class="form-control" type="text" id="cvc-1" placeholder="CVC" name="cvc"
+                                            pattern="[0-9]+" minlength="3" maxlength="3" required
+                                            title="Ingresa los 3 digitos">
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
@@ -201,40 +266,25 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
-  https://firebase.google.com/docs/web/setup#available-libraries -->
+     https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
 
-    <script>
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        var firebaseConfig = {
-            apiKey: "AIzaSyC5pkmnPgxN2fF58oCj47RMMQBBoqJXTyc",
-            authDomain: "escommerce-6dadb.firebaseapp.com",
-            databaseURL: "https://escommerce-6dadb-default-rtdb.firebaseio.com",
-            projectId: "escommerce-6dadb",
-            storageBucket: "escommerce-6dadb.appspot.com",
-            messagingSenderId: "963353940793",
-            appId: "1:963353940793:web:168c75d0b777d32a230ee8",
-            measurementId: "G-G7D0QTM0PQ"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
+    <script src="./js/firebaseKey.js"></script>
 
-        var defaultStorage = firebase.storage();
-
-    </script>
     <script src="./js/pedidos.js"></script>
     <script src="./js/realizarPedido.js"></script>
+    <script src="./js/nabvar.js"></script>
+    <script src="./assets/js/sweetalert.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="assets/js/vanilla-zoom.js"></script>
     <script src="assets/js/theme.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
-
+    <script src="./assets/js/main.js"></script>
     <script src="assets/js/Simple-Slider.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11 "></script>
 </body>
 
 </html>

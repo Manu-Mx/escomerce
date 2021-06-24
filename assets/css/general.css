@@ -1,7 +1,19 @@
 #divUnidadAcademica {
+    display: flex;
     display: none;
 }
 
 #divDireccion1 {
+    display: flex;
+    display: none;
+}
+
+#divPagoEfectivo {
+    display: flex;
+    display: none;
+}
+
+#divPagoTarjeta {
+    display: flex;
     display: none;
 }

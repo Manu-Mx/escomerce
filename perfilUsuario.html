@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Product - Brand</title>
+    <title>ESCOMERCE</title>
+    <link rel="icon" href="assets/img/LOGO.png">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
@@ -13,26 +14,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/Simple-Slider.css">
-    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/untitled.css">
     <link rel="stylesheet" href="assets/css/vanilla-zoom.min.css">
 </head>
 
 <body>
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
         <div class="container">
-            <div><img src="assets/img/LOGO.png" onclick="inicio()"><img src="assets/img/LETRAS%20LOGO.png" onclick="inicio()"></div><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div><img src="assets/img/LOGO.png" onclick="inicio()"><img src="assets/img/LETRAS%20LOGO.png"
+                    onclick="inicio()"></div><button data-bs-toggle="collapse" class="navbar-toggler"
+                data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav d-flex align-items-center align-content-center ms-auto">
                     <li class="nav-item"></li>
-                    <li class="nav-item"><a class="nav-link" href="catalogo.html">catalogo</a></li>
-                    <li class="nav-item d-flex flex-row-reverse"><button class="btn btn-primary" type="button" style="background: rgb(13,136,208);border-radius: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-top-left-radius: 10px;font-family: Montserrat, sans-serif;"
-                            onclick="verCarrito()"><span>Cantidad</span><i class="fa fa-shopping-cart" style="margin-left: 10px;"></i></button></li>
+                    <li class="nav-item"><a class="nav-link active" href="catalogo.html">catalogo</a></li>
+                    <li class="nav-item d-flex flex-row-reverse"><button id="cantCarrito" class="btn btn-primary" type="button"
+                            style="background: rgb(13,136,208);border-radius: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-top-left-radius: 10px;font-family: Montserrat, sans-serif;"
+                            onclick="verCarrito()"><span>0</span><i class="fa fa-shopping-cart"
+                                style="margin-left: 10px;"></i></button></li>
                     <li class="nav-item d-flex flex-row-reverse">
                         <div class="d-flex flex-column-reverse">
                             <div>
-                                <div class="input-group"><input class="form-control" type="text" style="border-color: RGB(13,136,208);border-top-left-radius: 10px;border-bottom-left-radius: 10px;width: 190px;"><button class="btn btn-primary" type="button" style="border-top-right-radius: 10px;border-bottom-right-radius: 10px;background: rgb(13,136,208);"><i class="fa fa-search" style="width: 80%;"></i></button></div>
+                                <div class="input-group"><input class="form-control" type="text"
+                                        style="border-color: RGB(13,136,208);border-top-left-radius: 10px;border-bottom-left-radius: 10px;width: 190px;"><button
+                                        class="btn btn-primary" type="button"
+                                        style="border-top-right-radius: 10px;border-bottom-right-radius: 10px;background: rgb(13,136,208);"><i
+                                            class="fa fa-search" style="width: 80%;"></i></button></div>
                             </div>
-                            <div class="d-flex flex-row-reverse justify-content-around"><a href="./perfilUsuario.html"><i class="la la-user"></i></a><a id="login_header" href="login.html" style="font-family: Montserrat, sans-serif;">iniciar sesión/registrarse</a></div>
+                            <div class="d-flex flex-row-reverse justify-content-around" id="login_header">
+                                <a href="./perfilUsuario.html"><i class="la la-user"></i></a>
+                                <a href="login.html" style="font-family: Montserrat, sans-serif;">iniciar
+                                    sesión/registrarse</a>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -47,15 +61,16 @@
                     <div class="product-info">
                         <div>
                             <ul class="nav nav-tabs" role="tablist" id="myTab">
-                                <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" id="datos-tab" href="#datos">Mis datos</a></li>
+                                <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" id="datos-tab" href="#datos">Mis datos</a></li>
                                 <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" id="compras-tabs" href="#compras">Mis compras</a></li>
                                 <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" id="ventas-tab" href="#ventas">Mis ventas</a></li>
                                 <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" id="catalogo-tab" href="#catalogo">Catalogo</a></li>
                                 <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" id="metodosPago-tab" href="#metodosPago">Métodos de pago</a></li>
                                 <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" id="misDirecciones-tab" href="#misDirecciones">Mis direcciones</a></li>
+                                <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" id="misDevoluciones-tab" href="#misDevoluciones">Mis devoluciones</a></li>
                             </ul>
-                            <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active description" role="tabpanel" id="datos">
+                            <div class="tab-content" id="myTabContent" style="font-size: 16px;">
+                                <div class="tab-pane fade description" role="tabpanel" id="datos">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="d-flex flex-column align-items-center gallery"><img src="assets/img/perfilImagen.png" style="width: 100%;"><input type="file" style="width: 100%;"></div>
@@ -80,47 +95,26 @@
                                         <div class="d-flex justify-content-center" style="width: 40px;"><i class="fa fa-caret-square-o-down align-self-center"></i></div>
                                     </div>
                                     <div>
-                                        <form id="form_registro">
-                                            <div class="mb-3">
-                                                <label class="form-label" for="name">Nombre</label><input class="form-control item" type="text" id="nombre_usa12" placeholder="Nombre(s)" required="true"></div>
-                                            <div class="mb-3">
-                                                <label class="form-label" for="password">Apellidos</label>
-                                                <input class="form-control" id="a_paterno12" type="text" placeholder="A. Paterno" required="true">
-                                                <input class="form-control" id="a_materno12" type="text" placeholder="A. Materno" required="true" style="margin-top: 10px;"></div>
-                                            <div class="mb-3" id="no_boleta_empleado12">
-                                                <label class="form-label" for="email">Boleta</label><input class="form-control" type="number" placeholder="No. Boleta o de empleado" min="2" max="19999999999999"></div>
-                                            <div class="mb-3" id="correo_cuenta12">
-                                                <label class="form-label" for="email">Correo</label><input class="form-control" type="email" placeholder="Correo institucional" required="true"></div>
-                                            <div class="mb-3" id="contraseña_cuenta12">
-                                                <label class="form-label" for="email">Contraseña</label><input class="form-control" type="password" placeholder="Contraseña de 8 a 16 caracteres" required="true"></div>
-                                            <div class="mb-3" id="contraseña_cuenta42">
-                                                <label class="form-label" for="email">Repite la contraseña</label><input class="form-control" type="password" placeholder="Contraseña de 8 a 16 caracteres" required="true"></div>
-                                            <div class="mb-3" id="escuela_procedencia12">
-                                                <label class="form-label" for="email">Escuela</label>
-                                                <select class="form-select" required="true">
+                                        <form>
+                                            <div class="mb-3"><label class="form-label" for="name">Nombre</label><input class="form-control item" type="text" id="name" placeholder="Nombre(s)" required="true"></div>
+                                            <div class="mb-3"><label class="form-label" for="password">Apellidos</label><input class="form-control" type="text" placeholder="A. Paterno" required="true"><input class="form-control" type="text" placeholder="A. Materno" required="true"
+                                                    style="margin-top: 10px;"></div>
+                                            <div class="mb-3"><label class="form-label" for="email">Boleta</label><input class="form-control" type="number" placeholder="No. Boleta o de empleado" min="2" max="19999999999999"></div>
+                                            <div class="mb-3"><label class="form-label" for="email">Correo</label><input class="form-control" type="email" placeholder="Correo institucional" required="true"></div>
+                                            <div class="mb-3"><label class="form-label" for="email">Contraseña</label><input class="form-control" type="password" placeholder="Contraseña de 8 a 16 caracteres" required="true"></div>
+                                            <div class="mb-3"><label class="form-label" for="email">Repite la contraseña</label><input class="form-control" type="password" placeholder="Contraseña de 8 a 16 caracteres" required="true"></div>
+                                            <div class="mb-3"><label class="form-label" for="email">Escuela</label><select class="form-select" required="true">
                                                     <option value="12" selected="">Escuela de procedencia</option>
                                                     <option value="13">ESCOM</option>
                                                     <option value="14">ESIME Z</option>
                                                 </select></div>
+                                            <div class="mb-3"><label class="form-label" for="email">Teléfono</label><input class="form-control" type="tel" placeholder="10 dígitos (opcional)"></div>
                                             <div class="mb-3">
-                                                <label class="form-label" for="email">Teléfono</label>
-                                                <input class="form-control" id="telefono_10dig12" type="tel" placeholder="10 dígitos (opcional)"></div>
-                                            <div class="mb-3">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" id="vendedor12" type="checkbox">
-                                                    <label class="form-check-label" for="formCheck-1">Quiero ser vendedor</label>
-                                                </div>
+                                                <div class="form-check"><input class="form-check-input" type="checkbox" id="checkVendedorRegistro"><label class="form-check-label" for="formCheck-1">Quiero ser vendedor</label></div>
                                             </div>
-                                            <div class="d-block mb-3">
-                                                <label class="form-label" for="email">INE</label>
-                                                <input class="form-control" id="ine12" type="file">
-                                            </div>
-                                            <div class="d-block mb-3">
-                                                <label class="form-label" for="email">Cuenta CLABE</label>
-                                                <input class="form-control" id="cuenta_clabe12" type="text" placeholder="No. cuenta CLABE">
-                                            </div>
-                                            <button class="btn btn-primary" id="actualizar_datos" type="submit" style="background: rgb(52, 73, 94);border-color: rgb(52, 73, 94);border-top-color: rgb(52,border-right-color 73,border-bottom-color 94);border-left-color: 73,;"
-                                            onclick="inicio()">Actualizar datos</button>>
+                                            <div class="d-block mb-3" id="divINERegistro"><label class="form-label" for="email">INE</label><input class="form-control" type="file"></div>
+                                            <div class="d-block mb-3" id="divCLABERegistro"><label class="form-label" for="email">Cuenta CLABE</label><input class="form-control" type="text" placeholder="No. cuenta CLABE"></div><button class="btn btn-primary" type="submit" style="background: rgb(52, 73, 94);border-color: rgb(52, 73, 94);border-top-color: 52;border-right-color: 73;border-bottom-color: 94;border-left-color: 73;"
+                                                onclick="inicio()">Actualizar datos</button>
                                         </form>
                                     </div>
                                 </div>
@@ -138,18 +132,12 @@
                                                         <div><span>Vendedor:&nbsp;</span></div>
                                                         <div><span>Estado de la entrega:&nbsp;</span><span class="value">Status</span></div>
                                                         <div><span>Precio por unidad:&nbsp;</span><span class="value">Precio por unidad</span></div>
-                                                        <div></div>
-                                                        <div></div>
-                                                        <div></div>
                                                     </div>
                                                 </div>
                                                 <div class="col-6 col-md-2 quantity"><label class="form-label d-none d-md-block" for="quantity">Total de la compra</label><span>$120</span></div>
                                                 <div class="col"><button class="btn btn-primary" type="button" style="background: rgb(13,136,208);">Volver a comprar</button></div>
                                             </div>
-
                                         </div>
-                                        <div class="product"></div>
-                                        <div class="product"></div>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade specifications" role="tabpanel" id="ventas">
@@ -212,7 +200,13 @@
                                     </div>
                                 </div>
                                 <div class="tab-pane fade specifications" role="tabpanel" id="catalogo">
-                                    <div class="items">
+                                    <div class="d-flex flex-column">
+                                        <h2>Agregar productos</h2>
+                                        <button class="btn btn-primary" id="btnAgregarProd" type="button" data-bs-toggle="modal" data-bs-target="#modalAgregarProd" style="margin-right:auto; margin-left:auto;">Agregar producto</button>
+                                    </div>
+
+                                    <div class="items" style="margin-top: 50px;">
+                                        <h2>Productos registrados</h2>
                                         <div class="product">
                                             <div class="row justify-content-center align-items-center" style="border-style: none;">
                                                 <div class="col-md-3">
@@ -280,26 +274,77 @@
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h4 class="modal-title">Agregar/editar producto</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    <h4 class="modal-title">Editar producto</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <div class="d-flex flex-column justify-content-around product-specs" style="height: 55vh;">
-                                                        <div class="d-flex justify-content-between"><span>Nombre:&nbsp;</span><input type="text"></div>
-                                                        <div class="d-flex justify-content-between"><span>Cantidad en stock:&nbsp;</span><input type="number"></div>
-                                                        <div class="d-flex justify-content-between"><span>Precio unitario:&nbsp;</span><input type="number"></div>
-                                                        <div class="d-flex flex-column"><span>Imagenes:&nbsp;</span><input type="file"><input type="file"><input type="file"><input type="file"></div>
-                                                        <div class="d-flex justify-content-between"><span>Condición:&nbsp;</span><select>
-                                                                <option value="12" selected="">Condición del producto</option>
-                                                                <option value="13">Nuevo</option>
-                                                                <option value="14">Usado</option>
-                                                            </select></div>
-                                                        <div class="d-flex flex-column"><span>Descripcion del producto</span><textarea></textarea></div>
+                                                    <div class="d-flex flex-column justify-content-evenly product-specs" style="height: 55vh;">
+                                                        <input id="nombreProd" type="text" placeholder="Nombre producto">
+                                                        <input id="cantProd" type="number" min="0" placeholder="Cantidad en stock">
+                                                        <input id="precioUnitario" type="number" min="0" placeholder="Precio unitario">
+                                                        <select id="condProd">
+                                                            <option value="">Condición del producto</option>
+                                                            <option>Nuevo</option>
+                                                            <option>Usado</option>
+                                                        </select>
+                                                        <input id="califProd" type="text" pattern="[0-9]+" placeholder="Calificacion">
+                                                        <div class="d-flex flex-column">
+                                                            <span>Imagenes:&nbsp;</span>
+                                                            <input id="urlImg" type="file">
+                                                            <input id="urlImg1" type="file">
+                                                            <input id="urlImg2" type="file">
+                                                        </div>
+                                                        <select id="catProd">
+                                                            <option value="">Selecciona la categoria</option>
+                                                        </select>
+                                                        <textarea id="descProd" placeholder="Descripcion"></textarea>
                                                     </div>
                                                 </div>
-                                                <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Cancelar</button><button class="btn btn-primary" type="button">Guardar</button></div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-light" type="button" data-bs-dismiss="modal">Cancelar</button>
+                                                    <button class="btn btn-primary" type="button">Guardar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <div class="modal fade" role="dialog" tabindex="-1" id="modalAgregarProd">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Agregar producto</h4>
+                                                    <button type="button" id="btnClose" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="d-flex flex-column justify-content-evenly product-specs" style="height: 55vh;">
+                                                        <input id="nombreProdN" type="text" placeholder="Nombre producto">
+                                                        <input id="cantProdN" type="number" min="0" placeholder="Cantidad en stock">
+                                                        <input id="precioUnitarioN" type="number" min="0" placeholder="Precio unitario">
+                                                        <select id="condProdN">
+                                                            <option value="undefined">Condición del producto</option>
+                                                            <option>Nuevo</option>
+                                                            <option>Usado</option>
+                                                        </select>
+                                                        <input id="califProdN" type="text" pattern="[0-9]+" placeholder="Calificacion">
+                                                        <div class="d-flex flex-column">
+                                                            <span>Imagenes:&nbsp;</span>
+                                                            <input id="urlImgN" accept="image/jpeg" type="file">
+                                                            <input id="urlImg1N" accept="image/jpeg" type="file">
+                                                            <input id="urlImg2N" accept="image/jpeg" type="file">
+                                                        </div>
+                                                        <select id="selectCat">
+                                                            <option value="undefined">Selecciona la categoria</option>
+                                                        </select>
+                                                        <textarea id="descProdN" placeholder="Descripcion"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-light" id="btnCerrar" type="button" data-bs-dismiss="modal">Cancelar</button>
+                                                    <button class="btn btn-primary" id="btnGuardarProd" type="submit">Guardar</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
                                 <div class="tab-pane fade .specifications" role="tabpanel" id="metodosPago">
                                     <div class="items">
@@ -366,29 +411,25 @@
                                                         <div></div>
                                                     </div>
                                                 </div>
-                                                
                                                 <div class="col d-flex justify-content-around"><button class="btn btn-primary" id="btnEditarTarjeta" type="button" style="background: rgb(13,136,208);" data-bs-toggle="modal" data-bs-target="#modalEditarTarjeta"><i class="fa fa-pencil"></i></button>
                                                     <button class="btn btn-primary" type="button" style="background: var(--bs-red);border-style: none;"><i class="fa fa-trash"></i></button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <form action="" id="form_usuarioPago">
                                     <div class="modal fade" role="dialog" tabindex="-1" id="modalEditarTarjeta">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h4 class="modal-title">Editar información de pago</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
-                                                
                                                 <div class="modal-body">
                                                     <div class="d-flex flex-column">
-                                                        <div class="d-flex"><span>Nombre:&nbsp;</span><input type="text" id="card_holder_mpago" placeholder="Nombre" style="width: 250px;margin-left: 20px;"></div>
-                                                        <div class="d-flex align-items-center" style="width: 100%;margin-top: 10px;"><span>Fecha:&nbsp;</span><input type="text" id="card_year_mpago" placeholder="AA" style="width: 150px;margin-left: 40px;"><input type="text" id="card_month_mpago" placeholder="MM" style="width: 150px;margin-right: 40px;margin-left: 10px;"></div>
+                                                        <div class="d-flex"><span>Nombre:&nbsp;</span><input type="text" placeholder="Nombre" style="width: 250px;margin-left: 20px;"></div>
+                                                        <div class="d-flex align-items-center" style="width: 100%;margin-top: 10px;"><span>Fecha:&nbsp;</span><input type="text" placeholder="AA" style="width: 150px;margin-left: 40px;"><input type="text" placeholder="MM" style="width: 150px;margin-right: 40px;margin-left: 10px;"></div>
                                                     </div>
                                                 </div>
-                                                <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Cerrar</button><button class="btn btn-primary" type="submit" id="btn_guardar">Guardar</button></div>
-                                            </form>
+                                                <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Cerrar</button><button class="btn btn-primary" type="button">Guardar</button></div>
                                             </div>
                                         </div>
                                     </div>
@@ -401,9 +442,8 @@
                                                     <div class="product-image"><img class="img-fluid d-block mx-auto image" src="assets/img/direccion.png"></div>
                                                 </div>
                                                 <div class="col-md-5 product-info">
-                                                    <div><span>Calle:</span><span class="value">&nbsp;Nombre calle</span></div>
+                                                    <div><span>ID solicitud:</span><span class="value">&nbsp;</span></div>
                                                     <div class="product-specs">
-                                                        <div><span>No. interior:&nbsp;</span><span class="value">No.</span></div>
                                                         <div><span>No. Exterior.:&nbsp;</span><span class="value">No.</span></div>
                                                         <div><span>Colonia:&nbsp;</span><span class="value">Nombre colonia</span></div>
                                                         <div><span>Alcaldia/Municipio:&nbsp;</span><span class="value">Nombre alcaldia</span></div>
@@ -430,20 +470,76 @@
                                                     <h4 class="modal-title">Editar dirección</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <div class="d-flex flex-column justify-content-evenly" style="height: 40vh;">
-                                                        <form action="./index.html" id="form_direcciones">
-                                                            <input type="text" id="calle12" placeholder="Calle">
-                                                            <input type="text" id="no_interior12" placeholder="No. Interior">
-                                                            <input type="text" id="no_exterior12" placeholder="No. Exterior (opcional)">
-                                                            <input type="text" id="colonia12" placeholder="Colonia">
-                                                            <input type="text" id="alcaldia12" placeholder="Alcaldia-Municipio">
-                                                            <input type="text" id="cp12" placeholder="C.P.">
-                                                            <button id="Guardar12">Guardar</button>hola
-                                                        </form>
-                                                    </div>
-                                                        <textarea placeholder="Referencias (No. telefónico, color de la puerta, etc.)"></textarea>
+                                                    <div class="d-flex flex-column justify-content-evenly" style="height: 40vh;"><input type="text" placeholder="Calle"><input type="text" placeholder="No. Interior"><input type="text" placeholder="No. Exterior (opcional)"><input type="text" placeholder="Colonia"><input type="text"
+                                                            placeholder="Alcaldia-Municipio"><input type="text" placeholder="C.P."></div><textarea placeholder="Referencias (No. telefónico, color de la puerta, etc.)"></textarea>
                                                 </div>
-                                                <!--div class="modal-footer"><button class="btn btn-primary" id="Guardar12" type="submit">Guardar</button><button class="btn btn-light" type="button" data-bs-dismiss="modal" data-bs-target="#modalDieccion">Cerrar</button></div-->
+                                                <div class="modal-footer"><button class="btn btn-primary" type="submit">Guardar</button><button class="btn btn-light" type="button" data-bs-dismiss="modal" data-bs-target="#modalDieccion">Cerrar</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade show active .specifications" role="tabpanel" id="misDevoluciones">
+                                    <div class="items">
+                                        <div class="product" style="text-align: justify;">
+                                            <div class="row justify-content-center align-items-center">
+                                                <div class="col-md-3">
+                                                    <div class="product-image"><img class="img-fluid d-block mx-auto image" src="assets/img/devolucion.png"></div>
+                                                </div>
+                                                <div class="col-md-5 col-lg-7 product-info">
+                                                    <div><span class="d-flex justify-content-center"><strong>Devoluciones realizadas</strong></span><span class="d-flex justify-content-center"></span></div>
+                                                    <div><span>ID Solicitud:</span><span class="value">&nbsp;No</span></div>
+                                                    <div class="product-specs">
+                                                        <div><span>Fecha:&nbsp;</span><span class="value">DD/MM/AAAA</span></div>
+                                                        <div><span>Vendedor:&nbsp;</span><span class="value">Nombre de usuario vendedor</span></div>
+                                                        <div><span class="value">Producto:</span><span class="value">&nbsp;Nombre del producto</span></div>
+                                                        <div></div>
+                                                        <div><span>Motivo de la devolución:&nbsp;</span><span id="motivo-solicitud" class="value">Descripción por la cual se solicita una devolución.</span></div>
+                                                        <div>
+                                                            <div><span class="value"></span></div>
+                                                        </div>
+                                                        <div></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col"><button class="btn btn-primary" type="button" style="background: var(--bs-red);border-style: none;font-size: 12px;">Cancelar&nbsp;<i class="fa fa-trash"></i>&nbsp;</button></div>
+                                            </div>
+                                            <div class="row justify-content-center align-items-center">
+                                                <div class="col-md-3">
+                                                    <div class="product-image"><img class="img-fluid d-block mx-auto image" src="assets/img/devolucion.png"></div>
+                                                </div>
+                                                <div class="col-md-5 col-lg-7 product-info">
+                                                    <div><span class="d-flex justify-content-center"><strong>Solicitudes de devolución</strong></span></div>
+                                                    <div><span>ID Solicitud:</span><span class="value">&nbsp;No</span></div>
+                                                    <div class="product-specs">
+                                                        <div><span>Fecha:&nbsp;</span><span class="value">DD/MM/AAAA</span></div>
+                                                        <div><span>Realizada por:&nbsp;</span><span class="value">Nombre usuario comprador</span></div>
+                                                        <div><span class="value">Producto:</span><span class="value">&nbsp;Nombre del producto</span></div>
+                                                        <div></div>
+                                                        <div><span>Motivo de la devolución:&nbsp;</span><span id="motivo-solicitud" class="value">Descripción por la cual se le ha solicitado una devolución.</span></div>
+                                                        <div>
+                                                            <div><span class="value"></span></div>
+                                                        </div>
+                                                        <div></div>
+                                                        <div></div>
+                                                        <div></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col"><button class="btn btn-primary" type="button" style="background: var(--bs-red);border-style: none;font-size: 12px;">Apelar&nbsp;<i class="fa fa-trash"></i>&nbsp;</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" role="dialog" tabindex="-1" id="modalDireccionEdit">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Editar dirección</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="d-flex flex-column justify-content-evenly" style="height: 40vh;"><input type="text" placeholder="Calle"><input type="text" placeholder="No. Interior"><input type="text" placeholder="No. Exterior (opcional)"><input type="text" placeholder="Colonia"><input type="text"
+                                                            placeholder="Alcaldia-Municipio"><input type="text" placeholder="C.P."></div><textarea placeholder="Referencias (No. telefónico, color de la puerta, etc.)"></textarea>
+                                                </div>
+                                                <div class="modal-footer"><button class="btn btn-primary" type="submit">Guardar</button><button class="btn btn-light" type="button" data-bs-dismiss="modal" data-bs-target="#modalDieccion">Cerrar</button></div>
                                             </div>
                                         </div>
                                     </div>
@@ -460,40 +556,25 @@
             <p>© Equipo 3 | Análisis y diseño orientado a objetos | 2CV16 | IPN-ESCOM<br></p>
         </div>
     </footer>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
+    <!-- TODO: Add SDKs for Firebase products that you want to use
  https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-storage.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
 
-<script>
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    var firebaseConfig = {
-        apiKey: "AIzaSyC5pkmnPgxN2fF58oCj47RMMQBBoqJXTyc",
-        authDomain: "escommerce-6dadb.firebaseapp.com",
-        databaseURL: "https://escommerce-6dadb-default-rtdb.firebaseio.com",
-        projectId: "escommerce-6dadb",
-        storageBucket: "escommerce-6dadb.appspot.com",
-        messagingSenderId: "963353940793",
-        appId: "1:963353940793:web:168c75d0b777d32a230ee8",
-        measurementId: "G-G7D0QTM0PQ"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-    
-    var defaultStorage = firebase.storage();
+    <script src="./js/firebaseKey.js"></script>
 
-</script>
-
-<script src="./js/perfilUsuario.js"></script>
-               <script src="js/consultPedido.js"></script>
- <script src="./js/perfil_usuario.js"></script>
- <script src="./js/direcciones.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/js/sweetalert.js"></script>
+    <script src="./js/nuevo.js"></script>
+    <script src="./js/perfilUsuario.js"></script>
+    <script src="js/consultPedido.js"></script>
+    <script src="./js/perfil_usuario.js"></script>
+    <script src="./js/direcciones.js"></script>
+    <script src="./js/nabvar.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="assets/js/vanilla-zoom.js"></script>

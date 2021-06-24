@@ -4,7 +4,7 @@ const taskContainer = document.getElementById('impr-carrito');
 const getPago = document.getElementById('impr-carrito');
 const printPago = document.getElementById('pagar-div');
 const pagarButton = document.getElementById('pagar-btn');
-
+const numCarrito = document.getElementById('cantCarrito');
 let carritoOn = false;
 let editStatus = false;
 let id = '';
@@ -21,7 +21,7 @@ const updateIntegrante = (id, updatedIntegrante) => db.collection('producto').do
 const onGetProductos = (callback) => db.collection('producto').onSnapshot(callback);
 const getProducto = (id) => db.collection('producto').doc(id).get();
 const onGetPrecio = (callback) => db.collection('producto').onSnapshot(callback);
-
+const getNumCarrito = (callback) => db.collection('carrito').onSnapshot(callback)
 const addVerProducto = (idProducto, datosProducto, precioProducto) => db.collection('ver_Producto').doc().set({
     idProducto,
     datosProducto,
@@ -45,7 +45,7 @@ const addPedido = (idCarrito, idCliente, total_pagado, infoPedido) => db.collect
 const onGetPedido = (callback) => db.collection('Confirmar_Pedido').onSnapshot(callback);
 //Imprimir
 window.addEventListener('DOMContentLoaded', async (e) => {
-
+    
     onGetCarritos((querySnapshot) => {
 
         //Guardamos los precios en este array
@@ -64,7 +64,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             console.log(infoDato.infoProducto)
             sessionStorage.setItem('IDClientePago', infoDato.idCliente)
             sessionStorage.setItem('IDCarritoPago', infoDato.id)
-
+            numCarrito.innerHTML = `
+            <span>${infoDato.infoProducto.length}</span><i class="fa fa-shopping-cart" style="margin-left: 10px;"></i>`
             infoDato.infoProducto.forEach((datos) => {
                 //ID de los Productos
                 //console.log(datos.id_prod)
@@ -124,6 +125,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                 addCantidad.forEach((valor) => {
                     valor.addEventListener('click', async (e) => {
                         const doc = await getCarrito(infoDato.id);
+                        
                         const idCarrito = infoDato.id; //ID del Carrito
                         const actualizarCarrito = (doc.data());
                         //actualizarCarrito.infoProducto //Selecciona todos los productos 

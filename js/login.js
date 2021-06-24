@@ -5,20 +5,19 @@ let op = false;
 var idCliente;
 var email;
 var password;
-var estadoCuentaf;
 /*const taskForm = document.getElementById('form_login');*/
 
-form.addEventListener('input', async (e) => {
+form.addEventListener('keyup', async (e) => {
+    sessionStorage.setItem('estadoCuenta', false);
     db.collection("clientes").where("emailCliente", "==", document.getElementById('emailCliente').value)
         .where("passwordCliente", "==", document.getElementById('passwordCliente').value)
         .get()
         .then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 idCliente = doc.id;
-                console.log(idCliente);
+                console.log('hola');
                 sessionStorage.setItem('estadoCuenta', true);
-                estadoCuentaf = sessionStorage.getItem('estadoCuenta');
-                console.log(estadoCuentaf/*sessionStorage.getItem('estadoCuenta')*/);
+                console.log(sessionStorage.getItem('estadoCuenta'));
             })
         })
         .catch((error) => {
@@ -26,19 +25,20 @@ form.addEventListener('input', async (e) => {
         })
 });
 
+
 document.getElementById('loginBtn').addEventListener('click', async (e) => {
     e.preventDefault();
     login();
 });
 
-function login() {
+async function login() {
 
-    if (estadoCuentaf == 'true') {
-        document.getElementById('login_header').innerHTML = "Cerrar Sesión";
+    if (sessionStorage.getItem('estadoCuenta') == 'true') {
         sessionStorage.setItem('idCliente', idCliente);
-        window.location = './catalogo.html';
+        mensajeDeExito('Inicio de sesion exitoso', './catalogo.html');
     } else {
-        console.log("datos de ingreso incorrectos");
+       mensajeAdvertencia( 'Los datos que ingreso son incorrectos' );
+       return;
     }
 
 }

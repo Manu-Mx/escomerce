@@ -1,3 +1,4 @@
+window.addEventListener('DOMContentLoaded', async (e) => {
 (function(window){
     function define_library() {
         var vanillaZoom = {};
@@ -90,3 +91,4 @@
         console.log("Library already defined.");
     }
 })(window);
+})
