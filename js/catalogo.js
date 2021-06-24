@@ -47,9 +47,9 @@ function imprimirProductos(doc) {
     infoDato.id = doc.id;
     //console.log(infoDato);
     //Genera un html
-    taskContainer.innerHTML += '<div class="col-12 col-md-6 col-lg-4 ' + infoDato.cat_prod + '" category="' + infoDato.cat_prod + '"><div class="clean-product-item"><div class="product-name"><a href="#">' + infoDato.nombre_prod + '</a></div>' +
+    taskContainer.innerHTML += '<div class="col-12 col-md-6 col-lg-4 ' + infoDato.cat_prod + '" category="' + infoDato.cat_prod + '"><div class="clean-product-item"><div class="review_titem_text">' + infoDato.nombre_prod + '</a></div>' +
         '<div class="image"><a><img class="img-fluid d-block mx-auto" src="' + infoDato.url_prod + '"></a></div>' +
-        '<div class="product-name"><a>' + infoDato.desc_prod + ' ID:' + infoDato.id + '</a></div><div class="product-name"></div><div class="about"><div class="d-none rating"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star-half-empty.svg"><img src="assets/img/star-empty.svg"></div>' +
+        '<div class="review_titem_text"><a>' + infoDato.desc_prod + ' ID:' + infoDato.id + '</a></div><div class="product-name"></div><div class="about"><div class="d-none rating"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star-half-empty.svg"><img src="assets/img/star-empty.svg"></div>' +
         '<div class="price"><h3>$' + infoDato.prec_prod + '</h3></div>' +
         '</div><div class="d-flex justify-content-around product-name" style="margin-top: 30px;">' +
         '<button data-id="' + infoDato.id + '" class="btn btn-primary btn-desc" type="button" style="background: rgb(13,136,208);">Ver</button><button data-id="' + infoDato.id + '"class="btn btn-primary btn-add" type="button" style="background: rgb(13,136,208);">Añadir Carrito</button></div></div></div>';

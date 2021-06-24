@@ -105,8 +105,8 @@ async function logout() {
         e.preventDefault();
         if (sessionStorage.getItem('estadoCuenta') == 'true') {
             document.getElementById('login_header').innerHTML = '<a href="./perfilUsuario.html"><i class="la la-user"></i></a>'+
-            '<a href="login.html" style="font-family: Montserrat, sans-serif;"> cerrar sesión </a>';
-            document.getElementById('login_header').addEventListener('click', function () {
+            '<a href="login.html" id="logOut" style="font-family: Montserrat, sans-serif;"> cerrar sesión </a>';
+            document.getElementById('logOut').addEventListener('click', function () {
                 sessionStorage.removeItem('idCliente');
                 sessionStorage.setItem('estadoCuenta', false);
             });

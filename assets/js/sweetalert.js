@@ -1,4 +1,4 @@
-function mensajeAdvertencia ( mensaje ) {
+async function mensajeAdvertencia ( mensaje ) {
     Swal.fire({
         position: 'center',
         icon: 'warning',
@@ -8,7 +8,7 @@ function mensajeAdvertencia ( mensaje ) {
     })
 }
 
-function mensajeDeExito(mensaje, redireccion) {
+async function mensajeDeExito(mensaje, redireccion) {
     Swal.fire({
         position: 'center',
         icon: 'success',
@@ -20,7 +20,7 @@ function mensajeDeExito(mensaje, redireccion) {
     })
 }
 
-function mensajeDeExitoS(mensaje) {
+async function mensajeDeExitoS(mensaje) {
     Swal.fire({
         position: 'center',
         icon: 'success',
@@ -81,6 +81,22 @@ async function pagoExitoso() {
         timer: 2000,
         showConfirmButton: false
     }).then(async function () {
-        window.location = "./catalogo.html";
+        window.location = "./ticket.html";
+    })
+}
+
+async function cargando(mensaje) {
+    Swal.fire({
+        title: mensaje,
+        width: 600,
+        background: 'rgba(255,255,255,0.9)',
+        backdrop: `
+        rgba(255,255,255,0.9)
+      url("./assets/img/cargando.gif")
+      top
+      no-repeat
+    `,
+        timer: 2000,
+        showConfirmButton: false
     })
 }
